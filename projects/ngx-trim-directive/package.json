@@ -1,0 +1,25 @@
+{
+  "name": "ngx-trim-directive",
+  "version": "0.0.1",
+  "author": "KingMario <gcyyq@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KingMario/packages/issues"
+  },
+  "homepage": "https://github.com/KingMario/packages#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/KingMario/packages.git"
+  },
+  "keywords": [
+    "angular",
+    "trim",
+    "directive",
+    "input",
+    "blur"
+  ],
+  "peerDependencies": {
+    "@angular/common": ">= 5.0.0",
+    "@angular/core": ">= 5.0.0"
+  }
+}
