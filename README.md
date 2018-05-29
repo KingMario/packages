@@ -1,7 +1,8 @@
 # Packages
 
+Travis build status: [![Build Status](https://travis-ci.org/KingMario/packages.svg?branch=master)](https://travis-ci.org/KingMario/packages)
 
-Compatible with Chrome, Firefox, Safari, Edge & IE. Tested by [![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=U3NlbHVLNzBXQnZObFNZdlh4aFhTYmpCakFSY25Kd2c4bFg2MXBjWGFFYz0tLXIyc2M2S3Ard3Ayc1BmUk5RV2FmQ0E9PQ==--dab67c894c6b103172c34da23b902e169df76607)](https://www.browserstack.com/automate/public-build/U3NlbHVLNzBXQnZObFNZdlh4aFhTYmpCakFSY25Kd2c4bFg2MXBjWGFFYz0tLXIyc2M2S3Ard3Ayc1BmUk5RV2FmQ0E9PQ==--dab67c894c6b103172c34da23b902e169df76607).
+Compatible with Chrome, Firefox, Safari, Edge & IE. Tested by [![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=U3NlbHVLNzBXQnZObFNZdlh4aFhTYmpCakFSY25Kd2c4bFg2MXBjWGFFYz0tLXIyc2M2S3Ard3Ayc1BmUk5RV2FmQ0E9PQ==--dab67c894c6b103172c34da23b902e169df76607)](https://www.browserstack.com/automate/public-build/U3NlbHVLNzBXQnZObFNZdlh4aFhTYmpCakFSY25Kd2c4bFg2MXBjWGFFYz0tLXIyc2M2S3Ard3Ayc1BmUk5RV2FmQ0E9PQ==--dab67c894c6b103172c34da23b902e169df76607). Powered by:
 
 [![browserstack](browserstack-logo-600x315.png)](http://browserstack.com/)
 
