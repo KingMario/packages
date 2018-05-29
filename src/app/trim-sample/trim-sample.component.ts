@@ -5,6 +5,7 @@ import {
 import {
   FormControl,
   FormGroup,
+  Validators,
 } from '@angular/forms';
 
 @Component({
@@ -17,7 +18,7 @@ export class TrimSampleComponent implements OnInit {
   constructor () {
   }
 
-  readonly fieldA = new FormControl('');
+  readonly fieldA = new FormControl('', Validators.required);
   readonly fieldB = new FormControl('');
 
   readonly formA = new FormGroup({
@@ -26,6 +27,10 @@ export class TrimSampleComponent implements OnInit {
   });
 
   ngOnInit () {
+  }
+
+  submit () {
+    alert('to submit');
   }
 
 }
