@@ -9,7 +9,8 @@ const browserstackKey = process.env.browserstackKey
 
 exports.config = {
   seleniumAddress: 'http://hub-cloud.browserstack.com/wd/hub',
-  allScriptsTimeout: 11000,
+  allScriptsTimeout: 22000,
+  getPageTimeout: 20000,
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
@@ -58,7 +59,7 @@ exports.config = {
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
-    defaultTimeoutInterval: 30000,
+    defaultTimeoutInterval: 60000,
     print: function () {
     }
   },

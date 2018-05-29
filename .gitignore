@@ -40,3 +40,4 @@ Thumbs.db
 
 # BrowserStack log
 local.log
+browserstack.err
