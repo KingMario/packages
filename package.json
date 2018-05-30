@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:trim": "rm -rf dist/ngx-trim-directive && ng build ngx-trim-directive --prod && cp -r projects/ngx-trim-directive/src/lib dist/ngx-trim-directive/src"
+    "build:trim": "rm -rf dist/ngx-trim-directive && ng build ngx-trim-directive --prod && cp -r projects/ngx-trim-directive/src/lib dist/ngx-trim-directive/src",
+    "prepush": "protractor e2e/protractor.conf.js"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +39,7 @@
     "@types/node": "~8.9.4",
     "browserstack-local": "^1.3.3",
     "codelyzer": "~4.2.1",
+    "husky": "^0.14.3",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",

@@ -12,7 +12,6 @@ script:
   - ng lint ngx-trim-directive
   - ng test ngx-trim-directive
   - ng build ngx-trim-directive --prod
-  - npm run e2e
 
 branches:
   only:
