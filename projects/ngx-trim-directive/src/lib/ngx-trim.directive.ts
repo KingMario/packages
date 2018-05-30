@@ -4,8 +4,6 @@ import {
   Input,
 } from '@angular/core';
 
-const msie = !!window['ActiveXObject'];
-
 @Directive({
   selector: 'input[trim]',
 })
@@ -14,50 +12,23 @@ export class NgxTrimDirective {
   @Input() trim: string;
 
   private getCaret (el) {
-    let start, end;
-
-    if (msie) {
-      const selection = document['selection'];
-      const val = el.value;
-      let selectionRange = selection.createRange().duplicate();
-
-      selectionRange.moveEnd('character', val.length);
-      start = (!selectionRange.text ? val.length : val.lastIndexOf(selectionRange.text));
-      selectionRange = selection.createRange().duplicate();
-      selectionRange.moveStart('character', -val.length);
-      end = selectionRange.text.length;
-    } else {
-      start = el.selectionStart;
-      end = el.selectionEnd;
-    }
-
     return {
-      'start': start,
-      'end': end,
-      'cursor': start === end,
-      'selection': start !== end,
+      start: el.selectionStart,
+      end: el.selectionEnd,
     };
 
   }
 
   private setCaret (el, start, end) {
 
-    if (msie) {
-      const selRange = el.createTextRange();
-      el.collapse(true);
-      el.moveStart('character', start);
-      el.moveEnd('character', end - start);
-      el.select();
-    } else {
-      el.selectionStart = start;
-      el.selectionEnd = end;
-    }
+    el.selectionStart = start;
+    el.selectionEnd = end;
 
     el.focus();
 
   }
 
-  private trimValue(el, value) {
+  private trimValue (el, value) {
 
     el.value = value.trim();
 
