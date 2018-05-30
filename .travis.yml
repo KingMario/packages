@@ -12,6 +12,16 @@ script:
   - ng lint ngx-trim-directive
   - ng test ngx-trim-directive
   - ng build ngx-trim-directive --prod
+  - ng build --prod --base-href /packages/
+  - cp dist/packages/index.html dist/packages/404.html
+
+deploy:
+  provider: pages
+  local-dir: dist/packages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  on:
+    branch: master
 
 branches:
   only:
