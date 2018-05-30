@@ -1,24 +1,28 @@
-import { browser, by, element } from 'protractor';
+import {
+  browser,
+  by,
+  element,
+} from 'protractor';
 
 export class TrimPage {
-  navigateTo() {
-    return browser.get('/trim');
+  navigateTo () {
+    return browser.get('./trim');
   }
 
-  getFieldA() {
+  getFieldA () {
     return element(by.xpath('/html/body/app-root/app-trim-sample/div/input[1]'));
   }
 
-  getFieldAValue() {
-    return element(by.xpath('/html/body/app-root/app-trim-sample/div/div[1]/pre')).getText();
+  async getFieldAValue () {
+    return await this.getFieldA().getAttribute('value');
   }
 
-  getFieldB() {
+  getFieldB () {
     return element(by.xpath('/html/body/app-root/app-trim-sample/div/input[2]'));
   }
 
-  getFieldBValue() {
-    return element(by.xpath('/html/body/app-root/app-trim-sample/div/div[2]/pre')).getText();
+  async getFieldBValue () {
+    return await this.getFieldB().getAttribute('value');
   }
 
   getSubmitButton () {

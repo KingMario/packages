@@ -3,10 +3,6 @@
 
 const {SpecReporter} = require('jasmine-spec-reporter')
 
-const browserstack = require('browserstack-local')
-
-const browserstackKey = process.env.browserstackKey
-
 exports.config = {
   seleniumAddress: 'http://hub-cloud.browserstack.com/wd/hub',
   allScriptsTimeout: 22000,
@@ -16,8 +12,7 @@ exports.config = {
   ],
   commonCapabilities: {
     'browserstack.user': 'changyugeng1',
-    'browserstack.key': browserstackKey,
-    'browserstack.local': true,
+    'browserstack.key': process.env.browserstackKey,
     'build': 'Version 1',
     'project': 'packages'
   },
@@ -33,28 +28,8 @@ exports.config = {
       browserName: 'Edge'
     }
   ],
-  beforeLaunch: function () {
-    console.log('Connecting local')
-    return new Promise(function (resolve, reject) {
-      exports.bs_local = new browserstack.Local()
-      exports.bs_local.start({
-        key: browserstackKey,
-        force: true
-      }, function (error) {
-        if (error) return reject(error)
-        console.log('Connected. Now testing...')
-
-        resolve()
-      })
-    })
-  },
-  afterLaunch: function () {
-    return new Promise(function (resolve, reject) {
-      exports.bs_local.stop(resolve)
-    })
-  },
   directConnect: false,
-  baseUrl: 'http://localhost:4200/',
+  baseUrl: 'http://mario.studio/packages/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,

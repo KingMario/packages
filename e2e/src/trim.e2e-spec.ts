@@ -1,8 +1,5 @@
 import { TrimPage } from './trim.po';
-import {
-  browser,
-  protractor,
-} from 'protractor';
+import { protractor } from 'protractor';
 
 const value = 'ngxTrimDirective';
 const valueAllSpaces = '      ';
@@ -20,47 +17,47 @@ describe('Trim Sample', () => {
   it('should trim value of field A on blur', async () => {
     page.navigateTo();
 
-    const field = page.getFieldA();
+    const fieldA = page.getFieldA();
+    const fieldB = page.getFieldB();
     const submitButton = page.getSubmitButton();
 
-    field.sendKeys(valueAllSpaces);
+    fieldA.sendKeys(valueAllSpaces);
     expect(submitButton.isEnabled()).toBeTruthy();
-    field.sendKeys(protractor.Key.TAB);
+    fieldB.click();
     expect(submitButton.isEnabled()).toBeFalsy();
 
-    field.sendKeys(valueWithLeadingSpaces);
-    expect(page.getFieldAValue()).toEqual(`"${valueWithLeadingSpaces}"`);
-    field.sendKeys(protractor.Key.TAB);
-    expect(page.getFieldAValue()).toEqual(`"${value}"`);
+    fieldA.sendKeys(valueWithLeadingSpaces);
+    expect(page.getFieldAValue()).toEqual(valueWithLeadingSpaces);
+    fieldB.click();
+    expect(page.getFieldAValue()).toEqual(value);
 
-    await field.clear();
-    field.sendKeys(valueWithTrailingSpaces);
-    expect(page.getFieldAValue()).toEqual(`"${valueWithTrailingSpaces}"`);
-    field.sendKeys(protractor.Key.TAB);
-    expect(page.getFieldAValue()).toEqual(`"${value}"`);
+    await fieldA.clear();
+    fieldA.sendKeys(valueWithTrailingSpaces);
+    expect(page.getFieldAValue()).toEqual(valueWithTrailingSpaces);
+    fieldB.click();
+    expect(page.getFieldAValue()).toEqual(value);
 
-    await field.clear();
-    field.sendKeys(valueWithSpaces);
-    expect(page.getFieldAValue()).toEqual(`"${valueWithSpaces}"`);
-    field.sendKeys(protractor.Key.TAB);
-    expect(page.getFieldAValue()).toEqual(`"${value}"`);
+    await fieldA.clear();
+    fieldA.sendKeys(valueWithSpaces);
+    expect(page.getFieldAValue()).toEqual(valueWithSpaces);
+    fieldB.click();
+    expect(page.getFieldAValue()).toEqual(value);
   });
 
-  it('should trim value of field B', async () => {
+  it('should trim value of field B', () => {
     page.navigateTo();
 
-    const field = page.getFieldB();
+    const fieldB = page.getFieldB();
 
-    field.sendKeys(value);
+    fieldB.sendKeys(value);
 
-    field.sendKeys(' ');
-    expect(page.getFieldBValue()).toEqual(`"${value}"`);
+    fieldB.sendKeys(' ');
+    expect(page.getFieldBValue()).toEqual(value);
 
-    field.sendKeys(protractor.Key.HOME);
-    field.sendKeys(' ');
-    expect(page.getFieldBValue()).toEqual(`"${value}"`);
+    fieldB.sendKeys(protractor.Key.HOME, ' ');
+    expect(page.getFieldBValue()).toEqual(value);
 
-    field.sendKeys(valueWithTrailingSpaces);
-    expect(page.getFieldBValue()).toEqual(`"${valueWithTrailingSpaces}${value}"`);
+    fieldB.sendKeys(valueWithTrailingSpaces);
+    expect(page.getFieldBValue()).toEqual(`${valueWithTrailingSpaces}${value}`);
   });
 });
