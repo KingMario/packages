@@ -9,6 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:trim": "rm -rf dist/ngx-trim-directive && ng build ngx-trim-directive --prod && cp -r projects/ngx-trim-directive/src/lib dist/ngx-trim-directive/src",
+    "lint:trim": "ng lint ngx-trim-directive",
+    "test:trim": "ng test ngx-trim-directive",
     "prepush": "protractor e2e/protractor.conf.js"
   },
   "private": true,
