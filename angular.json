@@ -160,6 +160,126 @@
           }
         }
       }
+    },
+    "ngx-cleave-directive": {
+      "root": "projects/ngx-cleave-directive",
+      "sourceRoot": "projects/ngx-cleave-directive/src",
+      "projectType": "library",
+      "prefix": "cleave",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-cleave-directive/tsconfig.lib.json",
+            "project": "projects/ngx-cleave-directive/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-cleave-directive/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-cleave-directive/src/test.ts",
+            "tsConfig": "projects/ngx-cleave-directive/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-cleave-directive/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-cleave-directive/tsconfig.lib.json",
+              "projects/ngx-cleave-directive/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-lower-case-directive": {
+      "root": "projects/ngx-lower-case-directive",
+      "sourceRoot": "projects/ngx-lower-case-directive/src",
+      "projectType": "library",
+      "prefix": "lowerCase",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-lower-case-directive/tsconfig.lib.json",
+            "project": "projects/ngx-lower-case-directive/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-lower-case-directive/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-lower-case-directive/src/test.ts",
+            "tsConfig": "projects/ngx-lower-case-directive/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-lower-case-directive/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-lower-case-directive/tsconfig.lib.json",
+              "projects/ngx-lower-case-directive/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-upper-case-directive": {
+      "root": "projects/ngx-upper-case-directive",
+      "sourceRoot": "projects/ngx-upper-case-directive/src",
+      "projectType": "library",
+      "prefix": "upperCase",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-upper-case-directive/tsconfig.lib.json",
+            "project": "projects/ngx-upper-case-directive/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-upper-case-directive/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-upper-case-directive/src/test.ts",
+            "tsConfig": "projects/ngx-upper-case-directive/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-upper-case-directive/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-upper-case-directive/tsconfig.lib.json",
+              "projects/ngx-upper-case-directive/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "packages"

@@ -1,0 +1,27 @@
+{
+  "name": "ngx-upper-case-directive",
+  "version": "1.0.1",
+  "author": "KingMario <gcyyq@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KingMario/packages/issues"
+  },
+  "homepage": "https://github.com/KingMario/packages#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/KingMario/packages.git"
+  },
+  "keywords": [
+    "angular",
+    "upperCase",
+    "upper",
+    "case",
+    "directive",
+    "input",
+    "blur"
+  ],
+  "peerDependencies": {
+    "@angular/common": ">= 5.0.0",
+    "@angular/core": ">= 5.0.0"
+  }
+}

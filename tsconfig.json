@@ -17,8 +17,17 @@
       "dom"
     ],
     "paths": {
+      "ngx-cleave-directive": [
+        "dist/ngx-cleave-directive"
+      ],
+      "ngx-lower-case-directive": [
+        "dist/ngx-lower-case-directive"
+      ],
       "ngx-trim-directive": [
         "dist/ngx-trim-directive"
+      ],
+      "ngx-upper-case-directive": [
+        "dist/ngx-upper-case-directive"
       ]
     }
   }

@@ -1,0 +1,16 @@
+<div [formGroup]="formA">
+  <input type="text" formControlName="fieldA" lowerCase="blur">
+  <input type="text" formControlName="fieldB" lowerCase>
+
+  <div>
+    Field A:
+    <pre>"{{fieldA.value}}"</pre>
+  </div>
+
+  <div>
+    Field B:
+    <pre>"{{fieldB.value}}"</pre>
+  </div>
+</div>
+
+<button (click)="submit()" [disabled]="formA.invalid">Submit</button>

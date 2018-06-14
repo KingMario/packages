@@ -4,21 +4,21 @@ import {
   TestBed,
 } from '@angular/core/testing';
 
-import { TrimSampleComponent } from './trim-sample.component';
+import { UpperCaseSampleComponent } from './upper-case-sample.component';
 
-describe('TrimSampleComponent', () => {
-  let component: TrimSampleComponent;
-  let fixture: ComponentFixture<TrimSampleComponent>;
+describe('UpperCaseSampleComponent', () => {
+  let component: UpperCaseSampleComponent;
+  let fixture: ComponentFixture<UpperCaseSampleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TrimSampleComponent],
+      declarations: [UpperCaseSampleComponent],
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TrimSampleComponent);
+    fixture = TestBed.createComponent(UpperCaseSampleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

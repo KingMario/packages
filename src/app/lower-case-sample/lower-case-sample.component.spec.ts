@@ -4,21 +4,21 @@ import {
   TestBed,
 } from '@angular/core/testing';
 
-import { TrimSampleComponent } from './trim-sample.component';
+import { LowerCaseSampleComponent } from './lower-case-sample.component';
 
-describe('TrimSampleComponent', () => {
-  let component: TrimSampleComponent;
-  let fixture: ComponentFixture<TrimSampleComponent>;
+describe('UpperCaseSampleComponent', () => {
+  let component: LowerCaseSampleComponent;
+  let fixture: ComponentFixture<LowerCaseSampleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TrimSampleComponent],
+      declarations: [LowerCaseSampleComponent],
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TrimSampleComponent);
+    fixture = TestBed.createComponent(LowerCaseSampleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
