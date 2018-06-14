@@ -9,9 +9,18 @@ before_script:
   - npm prune
 
 script:
+  - ng lint ngx-cleave-directive
+  - ng test ngx-cleave-directive
+  - ng build ngx-cleave-directive --prod
+  - ng lint ngx-lower-case-directive
+  - ng test ngx-lower-case-directive
+  - ng build ngx-lower-case-directive --prod
   - ng lint ngx-trim-directive
   - ng test ngx-trim-directive
   - ng build ngx-trim-directive --prod
+  - ng lint ngx-upper-case-directive
+  - ng test ngx-upper-case-directive
+  - ng build ngx-upper-case-directive --prod
   - ng build --prod --base-href /packages/
   - cp dist/packages/index.html dist/packages/404.html
 
