@@ -1,0 +1,31 @@
+{
+  "name": "ngx-cleave-directive",
+  "version": "0.0.1",
+  "author": "KingMario <gcyyq@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KingMario/packages/issues"
+  },
+  "homepage": "https://github.com/KingMario/packages#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/KingMario/packages.git"
+  },
+  "keywords": [
+    "angular",
+    "cleave",
+    "creditCard",
+    "phone",
+    "date",
+    "number",
+    "blocks",
+    "delimiters",
+    "prefix",
+    "directive"
+  ],
+  "peerDependencies": {
+    "@angular/common": ">= 5.0.0",
+    "@angular/core": ">= 5.0.0",
+    "cleave.js": "^1.3.7"
+  }
+}
