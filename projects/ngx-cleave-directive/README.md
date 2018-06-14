@@ -9,10 +9,10 @@ The directive works with Angular 5 and 6. To use it in Angular 4, you may import
 
 ## Usage
 
-1.Install `ngx-cleave-directive`.
+1.Install `cleave.js` and `ngx-cleave-directive`.
 
 ```bash
-npm i -S ngx-cleave-directive
+npm i -S cleave.js ngx-cleave-directive
 ```
 
 2.Import `NgxCleaveDirectiveModule` to your Angular module.
@@ -48,6 +48,14 @@ import { NgxCleaveDirectiveModule } from 'ngx-cleave-directive';
 ```html
 <input type="text" ... [cleave]="{creditCard: true}">
 ```
+
+4.Import any `cleave.js` addon if needed.
+
+e.g.
+
+```typescript
+import 'cleave.js/dist/addons/cleave-phone.au-cn.js';
+````
 
 For more details, please refer to [cleave.js official site](https://nosir.github.io/cleave.js/).
 

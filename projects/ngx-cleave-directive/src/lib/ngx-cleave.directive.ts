@@ -1,6 +1,7 @@
 import {
   Directive,
   ElementRef,
+  HostListener,
   Input,
   OnInit,
 } from '@angular/core';
@@ -14,6 +15,8 @@ export class NgxCleaveDirective implements OnInit {
 
   @Input() cleave: object;
 
+  private _value: string;
+
   constructor (
     private elementRef: ElementRef,
   ) {
@@ -25,13 +28,16 @@ export class NgxCleaveDirective implements OnInit {
     new Cleave(el, {
       ...this.cleave,
       onValueChanged: ({ target }) => {
-        // TODO: make truncated property obtainable from the target or judged by the directive itself
-        // const truncated = target.truncated || ...(?)
-        if (target.value !== el.value /* && truncated */) {
+        if (target.value !== this._value) {
           this.dispatchEvent(el, 'input');
         }
       },
     });
+  }
+
+  @HostListener('input', ['$event.target.value'])
+  onInput (value: string): void {
+    this._value = value;
   }
 
   private dispatchEvent (el, eventType) {
