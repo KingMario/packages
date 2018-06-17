@@ -20,8 +20,10 @@ export class CleaveSampleComponent implements OnInit {
   constructor () {
   }
 
-  readonly fieldA = new FormControl('', Validators.required);
-  readonly fieldB = new FormControl('');
+  value = '123412345123456';
+
+  readonly fieldA = new FormControl('02588662222', Validators.required);
+  readonly fieldB = new FormControl('4621082500002429');
 
   readonly formA = new FormGroup({
     fieldA: this.fieldA,
@@ -29,6 +31,10 @@ export class CleaveSampleComponent implements OnInit {
   });
 
   ngOnInit () {
+  }
+
+  setValue () {
+    this.value = '4621002500002429';
   }
 
   submit () {

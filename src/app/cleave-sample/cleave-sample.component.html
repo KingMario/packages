@@ -1,6 +1,24 @@
+<input type="text" [(ngModel)]="value" [cleave]="{creditCard: true}">
+
+<button (click)="setValue()">
+  set value
+</button>
+
+<div>
+  value:
+  <pre>"{{value}}"</pre>
+</div>
+
 <div [formGroup]="formA">
-  <input type="text" formControlName="fieldA" [cleave]="{phone:true,phoneRegionCode:'cn'}">
-  <input type="text" formControlName="fieldB" [cleave]="{creditCard: true}">
+  <div>
+    <input type="text" formControlName="fieldA" [cleave]="{phone:true,phoneRegionCode:'cn'}">
+    <button (click)="fieldA.setValue('02169943725')">set value</button>
+  </div>
+
+  <div>
+    <input type="text" formControlName="fieldB" [cleave]="{creditCard: true}">
+    <button (click)="fieldB.setValue('9822432213352233')">set value</button>
+  </div>
 
   <div>
     Field A:

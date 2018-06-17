@@ -2,42 +2,111 @@ import {
   Directive,
   ElementRef,
   HostListener,
+  Injector,
   Input,
+  OnDestroy,
   OnInit,
 } from '@angular/core';
+import {
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 
 import * as Cleave from 'cleave.js';
 
 @Directive({
   selector: 'input[cleave]',
 })
-export class NgxCleaveDirective implements OnInit {
+export class NgxCleaveDirective implements OnInit, OnDestroy {
 
-  @Input() cleave: object;
+  @Input() set cleave (cleave: any) {
 
+    this._cleave = cleave;
+
+    this.setCleave();
+
+  }
+
+  private _cleave: any;
+  private _cleaveInstance: Cleave;
   private _value: string;
+  private _valueAccessor: any;
+  private _writeValue: (value) => void;
 
   constructor (
     private elementRef: ElementRef,
+    private injector: Injector,
   ) {
   }
 
   ngOnInit () {
-    const el = this.elementRef.nativeElement;
-    // tslint:disable-next-line: no-unused-expression
-    new Cleave(el, {
-      ...this.cleave,
-      onValueChanged: ({ target }) => {
-        if (target.value !== this._value) {
-          this.dispatchEvent(el, 'input');
+
+    const valueAccessors = this.injector.get<ControlValueAccessor[]>(NG_VALUE_ACCESSOR);
+
+    if (valueAccessors.length) {
+
+      this._valueAccessor = valueAccessors[0];
+      this._writeValue = this._valueAccessor.writeValue;
+      this._valueAccessor.writeValue = (value) => {
+
+        if (this._writeValue) {
+          this._writeValue.call(this._valueAccessor, value);
         }
-      },
-    });
+
+        this.setCleave();
+
+      };
+
+    }
+
+  }
+
+  ngOnDestroy () {
+
+    if (this._valueAccessor && this._writeValue) {
+
+      this._valueAccessor.writeValue = this._writeValue;
+
+    }
+
+    if (this._cleaveInstance) {
+
+      this._cleaveInstance.destroy();
+
+    }
+
   }
 
   @HostListener('input', ['$event.target.value'])
   onInput (value: string): void {
+
     this._value = value;
+
+  }
+
+  private setCleave () {
+
+    if (this._cleaveInstance) {
+
+      this._cleaveInstance.destroy();
+
+    }
+
+    const el = this.elementRef.nativeElement;
+    this._cleaveInstance = new Cleave(el, {
+      ...this._cleave,
+      onValueChanged: ({ target }) => {
+        if (target.value !== this._value) {
+
+          this.dispatchEvent(el, 'input');
+
+        }
+      },
+    });
+
+    // hack for model -> view cleave
+    setTimeout(() => this.dispatchEvent(el, 'input'), 0);
+
   }
 
   private dispatchEvent (el, eventType) {

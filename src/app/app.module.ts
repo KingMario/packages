@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgxLowerCaseDirectiveModule } from 'ngx-lower-case-directive';
 import { NgxTrimDirectiveModule } from 'ngx-trim-directive';
@@ -25,6 +25,7 @@ import { CleaveSampleComponent } from './cleave-sample/cleave-sample.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     ReactiveFormsModule,
 
     AppRoutingModule,

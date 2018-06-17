@@ -10,6 +10,7 @@ before_script:
 
 script:
   - ng lint ngx-cleave-directive
+  - ng test ngx-cleave-directive
   - ng build ngx-cleave-directive --prod
   - ng lint ngx-lower-case-directive
   - ng test ngx-lower-case-directive
