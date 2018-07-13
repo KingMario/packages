@@ -22,6 +22,24 @@ Compatible with Chrome, Safari, Edge & IE. Test status [![BrowserStack Status](h
 
 Manually tested in Firefox.
 
+## Package 2. ngx-upper-case-directive
+
+> This directive helps to convert an input text value to upper case.
+
+[Readme](projects/ngx-upper-case-directive/README.md)
+
+## Package 3. ngx-lower-case-directive
+
+> This directive helps to convert an input text value to lower case.
+
+[Readme](projects/ngx-lower-case-directive/README.md)
+
+## Package 4. ngx-cleave-directive
+
+> This directive integrates cleave.js into Angular Form.
+
+[Readme](projects/ngx-cleave-directive/README.md)
+
 ## Development & Contribution
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
