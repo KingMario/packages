@@ -16,11 +16,15 @@ Screenshot:
 
 Travis build status: [![Build Status](https://travis-ci.org/KingMario/packages.svg?branch=master)](https://travis-ci.org/KingMario/packages)
 
-Compatible with Chrome, Safari, Edge & IE. Test status [![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=U3NlbHVLNzBXQnZObFNZdlh4aFhTYmpCakFSY25Kd2c4bFg2MXBjWGFFYz0tLXIyc2M2S3Ard3Ayc1BmUk5RV2FmQ0E9PQ==--dab67c894c6b103172c34da23b902e169df76607)](https://www.browserstack.com/automate/public-build/U3NlbHVLNzBXQnZObFNZdlh4aFhTYmpCakFSY25Kd2c4bFg2MXBjWGFFYz0tLXIyc2M2S3Ard3Ayc1BmUk5RV2FmQ0E9PQ==--dab67c894c6b103172c34da23b902e169df76607). Powered by:
-
-[![browserstack](https://cdn.rawgit.com/KingMario/packages/master/assets/browserstack-logo-600x315.png)](http://browserstack.com/)
+Compatible with Chrome, Safari, Edge & IE. Test status [![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=U3NlbHVLNzBXQnZObFNZdlh4aFhTYmpCakFSY25Kd2c4bFg2MXBjWGFFYz0tLXIyc2M2S3Ard3Ayc1BmUk5RV2FmQ0E9PQ==--dab67c894c6b103172c34da23b902e169df76607)](https://www.browserstack.com/automate/public-build/U3NlbHVLNzBXQnZObFNZdlh4aFhTYmpCakFSY25Kd2c4bFg2MXBjWGFFYz0tLXIyc2M2S3Ard3Ayc1BmUk5RV2FmQ0E9PQ==--dab67c894c6b103172c34da23b902e169df76607).
 
 Manually tested in Firefox.
+
+### Sponsored by:
+
+[<img src="https://cdn.rawgit.com/KingMario/packages/master/assets/travis-ci.svg" alt="Travis CI" width="200" />](https://travis-ci.org/)
+[<img src="https://cdn.rawgit.com/KingMario/packages/master/assets/browserstack-logo-600x315.png" alt="browserstack" width="200" />](http://browserstack.com/)
+[<img src="https://cdn.rawgit.com/KingMario/packages/master/assets/jetbrains-variant-3.png" alt="JetBrains" width="200"/>](https://www.jetbrains.com/?from=ngx-trim-directive)
 
 ## Package 2. ngx-upper-case-directive
 
