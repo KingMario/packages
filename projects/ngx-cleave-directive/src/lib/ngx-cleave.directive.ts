@@ -2,7 +2,7 @@ import {
   Directive,
   ElementRef,
   HostListener,
-  Injector,
+  Inject,
   Input,
   OnDestroy,
   OnInit,
@@ -30,22 +30,21 @@ export class NgxCleaveDirective implements OnInit, OnDestroy {
   private _cleave: any;
   private _cleaveInstance: Cleave;
   private _value: string;
-  private _valueAccessor: any;
+  private _valueAccessor: ControlValueAccessor;
   private _writeValue: (value) => void;
 
   constructor (
     private elementRef: ElementRef,
-    private injector: Injector,
+    @Inject(NG_VALUE_ACCESSOR) private valueAccessors: ControlValueAccessor[],
   ) {
   }
 
   ngOnInit () {
 
-    const valueAccessors = this.injector.get<ControlValueAccessor[]>(NG_VALUE_ACCESSOR);
+    if (this.valueAccessors.length) {
 
-    if (valueAccessors.length) {
+      this._valueAccessor = this.valueAccessors[0];
 
-      this._valueAccessor = valueAccessors[0];
       this._writeValue = this._valueAccessor.writeValue;
       this._valueAccessor.writeValue = (value) => {
 
