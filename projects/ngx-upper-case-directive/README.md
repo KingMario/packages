@@ -49,7 +49,7 @@ import { NgxUpperCaseDirectiveModule } from 'ngx-upper-case-directive';
   ...
 ```
 
-3.Add the "upperCase" attribute to an input element.
+3.Add the "upperCase" attribute to an input element or a textarea element.
 
 ```html
 <input type="text" ... upperCase>
@@ -58,7 +58,7 @@ import { NgxUpperCaseDirectiveModule } from 'ngx-upper-case-directive';
 4.If you want to convert the value ONLY on blur event, you should set the value of upperCase attribute to `blur`.
 
 ```html
-<input type="text" ... upperCase="blur">
+<textarea ... upperCase="blur"></textarea>
 ```
 
 ---

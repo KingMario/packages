@@ -5,7 +5,7 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: 'input[upperCase]:not([lowerCase])',
+  selector: 'input[upperCase]:not([lowerCase]),textarea[upperCase]:not([lowerCase])',
 })
 export class NgxUpperCaseDirective {
 

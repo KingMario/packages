@@ -49,7 +49,7 @@ import { NgxTrimDirectiveModule } from 'ngx-trim-directive';
   ...
 ```
 
-3.Add the "trim" attribute to an input element.
+3.Add the "trim" attribute to an input element or a textarea element.
 
 ```html
 <input type="text" ... trim>

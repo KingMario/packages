@@ -49,7 +49,7 @@ import { NgxLowerCaseDirectiveModule } from 'ngx-lower-case-directive';
   ...
 ```
 
-3.Add the "lowerCase" attribute to an input element.
+3.Add the "lowerCase" attribute to an input element or a textarea element.
 
 ```html
 <input type="text" ... lowerCase>
@@ -58,7 +58,7 @@ import { NgxLowerCaseDirectiveModule } from 'ngx-lower-case-directive';
 4.If you want to convert the value ONLY on blur event, you should set the value of lowerCase attribute to `blur`.
 
 ```html
-<input type="text" ... lowerCase="blur">
+<textarea type="text" ... lowerCase="blur"></textarea>
 ```
 
 ---

@@ -15,7 +15,7 @@ import {
 import * as Cleave from 'cleave.js';
 
 @Directive({
-  selector: 'input[cleave]',
+  selector: 'input[cleave],textarea[cleave]',
 })
 export class NgxCleaveDirective implements OnInit, OnDestroy {
 

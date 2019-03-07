@@ -49,7 +49,7 @@ import { NgxCleaveDirectiveModule } from 'ngx-cleave-directive';
   ...
 ```
 
-3.Add the "cleave" attribute to an input element and bind it with a legal cleave.js option.
+3.Add the "cleave" attribute to an input element or a textarea element and bind it with a legal cleave.js option.
 
 ```html
 <input type="text" ... [cleave]="{creditCard: true}">

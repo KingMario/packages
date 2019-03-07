@@ -5,7 +5,7 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: 'input[trim]',
+  selector: 'input[trim],textarea[trim]',
 })
 export class NgxTrimDirective {
 
