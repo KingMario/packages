@@ -280,6 +280,46 @@
           }
         }
       }
+    },
+    "ngx-lodash-pipes": {
+      "root": "projects/ngx-lodash-pipes",
+      "sourceRoot": "projects/ngx-lodash-pipes/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-lodash-pipes/tsconfig.lib.json",
+            "project": "projects/ngx-lodash-pipes/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-lodash-pipes/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-lodash-pipes/src/test.ts",
+            "tsConfig": "projects/ngx-lodash-pipes/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-lodash-pipes/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-lodash-pipes/tsconfig.lib.json",
+              "projects/ngx-lodash-pipes/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "packages"

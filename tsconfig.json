@@ -28,6 +28,9 @@
       ],
       "ngx-upper-case-directive": [
         "dist/ngx-upper-case-directive"
+      ],
+      "ngx-lodash-pipes": [
+        "dist/ngx-lodash-pipes"
       ]
     }
   }

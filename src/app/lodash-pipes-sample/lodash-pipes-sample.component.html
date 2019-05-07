@@ -1,0 +1,97 @@
+<h2>Lodash Pipes</h2>
+
+<h3>General Purpose Form</h3>
+
+<ul>
+  <li>
+    <h4>
+      Call with Existing Function
+    </h4>
+
+    <div>
+      <em>{{array4Chunk | json}} | _: 'chunk' : 2 | json</em>
+      =>
+      {{array4Chunk | _: 'chunk' : 2 | json}}
+    </div>
+  </li>
+
+  <li>
+    <h4>
+      Call with Non-existing Function
+    </h4>
+
+    <div>
+      <em>{{array4Chunk | json}} | _: 'jellyfish' : 2 | json</em>
+      =>
+      {{array4Chunk | _: 'jellyfish' : 2 | json}}
+    </div>
+  </li>
+
+</ul>
+<hr>
+
+<h3>Specific Form</h3>
+
+<h4>Array</h4>
+
+<ul>
+  <li>
+    <em>chunk {{array4Chunk | json}} by 2</em>
+    =>
+    {{array4Chunk | chunk: 2 | json}}
+    <a href="https://lodash.com/docs#chunk" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>compact {{array4Compact | json}}</em>
+    =>
+    {{array4Compact | compact | json}}
+    <a href="https://lodash.com/docs#compact" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>concat {{array4Concat | json}} by 2, [3], [[4]]</em>
+    =>
+    {{array4Concat | concat: 2: [3]: [[4]] | json}}
+    <a href="https://lodash.com/docs#concat" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>difference {{array4Difference | json}} by {{otherArray4Difference | json }}</em>
+    =>
+    {{array4Difference | difference: otherArray4Difference | json}}
+    <a href="https://lodash.com/docs#difference" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>differenceBy {{array4DifferenceBy | json}} by {{otherArray4DifferenceBy | json }}, Math.floor</em>
+    =>
+    {{array4DifferenceBy | differenceBy: otherArray4DifferenceBy: floorIteratee | json}}
+    <a href="https://lodash.com/docs#differenceBy" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>differenceWith {{array4DifferenceWith | json}} by {{otherArray4DifferenceWith | json}}, _.isEqual</em>
+    =>
+    {{array4DifferenceWith | differenceWith: otherArray4DifferenceWith: isEqual | json}}
+    <a href="https://lodash.com/docs#differenceWith" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>drop {{array4Drop | json}} by 2</em>
+    =>
+    {{array4Drop | drop: 2 | json}}
+    <a href="https://lodash.com/docs#drop" target="_docs">reference</a>
+  </li>
+</ul>
+
+<h4>Collection</h4>
+
+<ul>
+  <li>
+    <em>every {{array4Every | json}} by ['active', false]</em>
+    =>
+    {{array4Every | every: ['active', false] | json}}
+    <a href="https://lodash.com/docs#every" target="_docs">reference</a>
+  </li>
+</ul>
