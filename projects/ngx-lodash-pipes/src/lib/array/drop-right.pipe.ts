@@ -4,17 +4,17 @@ import {
 } from '@angular/core';
 
 import {
-  drop,
+  dropRight,
   List,
 } from 'lodash';
 
 @Pipe({
-  name: 'drop',
+  name: 'dropRight',
 })
-export class DropPipe implements PipeTransform {
+export class DropRightPipe implements PipeTransform {
 
   transform<T> (array: List<T> | null | undefined, n?: number): T[] {
-    return drop(array, n);
+    return dropRight(array, n);
   }
 
 }

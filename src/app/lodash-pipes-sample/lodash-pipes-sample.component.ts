@@ -59,12 +59,24 @@ export class LodashPipesSampleComponent implements OnInit {
   otherArray4DifferenceWith = [{ 'x': 1, 'y': 2 }];
   isEqual = isEqual;
 
-  array4Drop = [1, 2, 3];
+  array4Drop = [
+    1,
+    2,
+    3,
+  ];
+
+  array4DropWhile = [
+    { 'user': 'barney', 'active': true },
+    { 'user': 'fred', 'active': false },
+    { 'user': 'pebbles', 'active': false },
+  ];
 
   array4Every = [
     { 'user': 'barney', 'age': 36, 'active': false },
-    { 'user': 'fred',   'age': 40, 'active': false }
+    { 'user': 'fred', 'age': 40, 'active': false },
   ];
+
+  func4DropWhile = (o) => !o.active;
 
   ngOnInit () {
   }

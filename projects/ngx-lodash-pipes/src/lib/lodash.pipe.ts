@@ -3,7 +3,7 @@ import {
   PipeTransform,
 } from '@angular/core';
 
-import * as lodash from 'lodash';
+import * as _ from 'lodash';
 
 @Pipe({
   name: '_',
@@ -15,8 +15,8 @@ export class LodashPipe implements PipeTransform {
     lodashMemberName: string,
     ...args: any[]
   ): any {
-    const func = lodash[lodashMemberName];
-    return func ? func(value, ...args) : value;
+    const func = _[lodashMemberName];
+    return _.isFunction(func) ? func(value, ...args) : value;
   }
 
 }

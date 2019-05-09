@@ -1,6 +1,6 @@
 <h2>Lodash Pipes</h2>
 
-<h3>General Purpose Form</h3>
+<h3>The Umbrella-Form Pipe</h3>
 
 <ul>
   <li>
@@ -30,7 +30,7 @@
 </ul>
 <hr>
 
-<h3>Specific Form</h3>
+<h3>Direct-Form Pipes</h3>
 
 <h4>Array</h4>
 
@@ -82,6 +82,34 @@
     =>
     {{array4Drop | drop: 2 | json}}
     <a href="https://lodash.com/docs#drop" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>dropRight {{array4Drop | json}} by 2</em>
+    =>
+    {{array4Drop | dropRight: 2 | json}}
+    <a href="https://lodash.com/docs#dropRight" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>dropRight {{array4Drop | json}} by 2</em>
+    =>
+    {{array4Drop | dropRight: 2 | json}}
+    <a href="https://lodash.com/docs#dropRight" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>dropRightWhile {{array4DropWhile | json}} by {{func4DropWhile}}</em>
+    =>
+    {{array4DropWhile | dropRightWhile: func4DropWhile | json}}
+    <a href="https://lodash.com/docs#dropRight" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>dropWhile {{array4DropWhile | json}} by 'active'</em>
+    =>
+    {{array4DropWhile | dropWhile: 'active' | json}}
+    <a href="https://lodash.com/docs#dropRight" target="_docs">reference</a>
   </li>
 </ul>
 
