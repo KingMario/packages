@@ -71,6 +71,25 @@ export class LodashPipesSampleComponent implements OnInit {
     { 'user': 'pebbles', 'active': false },
   ];
 
+  array4Fill = [
+    1,
+    2,
+    3,
+  ];
+
+  array4FindIndex = [
+    { 'user': 'barney', 'active': false },
+    { 'user': 'fred', 'active': false },
+    { 'user': 'pebbles', 'active': true },
+  ];
+
+  predicate4FindIndex = { user: 'barney' };
+  predicate4FindLastIndex = { active: false };
+
+  array4Flatten = [1, [2, [3, [4]], 5]];
+
+  array4FromPairs = [['a', 1], ['b', 2]];
+
   array4Every = [
     { 'user': 'barney', 'age': 36, 'active': false },
     { 'user': 'fred', 'age': 40, 'active': false },

@@ -15,8 +15,19 @@ export class LodashPipe implements PipeTransform {
     lodashMemberName: string,
     ...args: any[]
   ): any {
+    let newValue = value;
     const func = _[lodashMemberName];
-    return _.isFunction(func) ? func(value, ...args) : value;
+
+    // array rewriting members
+    const arrayRewritingMembers = [
+      'fill',
+    ];
+    if (arrayRewritingMembers.indexOf(lodashMemberName) > -1) {
+      // to avoid ExpressionChangedAfterItHasBeenCheckedError
+      newValue = [...value];
+    }
+
+    return _.isFunction(func) ? func(newValue, ...args) : value;
   }
 
 }

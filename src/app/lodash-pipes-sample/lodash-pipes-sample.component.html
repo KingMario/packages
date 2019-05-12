@@ -13,6 +13,12 @@
       =>
       {{array4Chunk | _: 'chunk' : 2 | json}}
     </div>
+
+    <div>
+      <em>{{array4Fill | json}} | _: 'fill' : 'a' | json</em>
+      =>
+      {{array4Fill | _: 'fill' : 'a' | json}}
+    </div>
   </li>
 
   <li>
@@ -110,6 +116,55 @@
     =>
     {{array4DropWhile | dropWhile: 'active' | json}}
     <a href="https://lodash.com/docs#dropRight" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>fill {{array4Fill | json}} by 'a'</em>
+    =>
+    {{array4Fill | fill: 'a' | json}}
+    <a href="https://lodash.com/docs#fill" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>findIndex {{array4FindIndex | json}} by {{predicate4FindIndex | json}}</em>
+    =>
+    {{array4FindIndex | findIndex: predicate4FindIndex | json}}
+    <a href="https://lodash.com/docs#findIndex" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>findLastIndex {{array4FindIndex | json}} by {{predicate4FindLastIndex | json}}</em>
+    =>
+    {{array4FindIndex | findLastIndex: predicate4FindLastIndex | json}}
+    <a href="https://lodash.com/docs#findLastIndex" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>flatten {{array4Flatten | json}}</em>
+    =>
+    {{array4Flatten | flatten | json}}
+    <a href="https://lodash.com/docs#flatten" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>flattenDeep {{array4Flatten | json}}</em>
+    =>
+    {{array4Flatten | flattenDeep | json}}
+    <a href="https://lodash.com/docs#flattenDeep" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>flattenDepth {{array4Flatten | json}} by 2</em>
+    =>
+    {{array4Flatten | flattenDepth: 2 | json}}
+    <a href="https://lodash.com/docs#flattenDepth" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>fromPairs {{array4FromPairs | json}}</em>
+    =>
+    {{array4FromPairs | fromPairs | json}}
+    <a href="https://lodash.com/docs#fromPairs" target="_docs">reference</a>
   </li>
 </ul>
 

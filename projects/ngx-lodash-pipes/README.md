@@ -2,7 +2,7 @@
 
 This collection of pipes can help you simplify your [lodash](https://lodash.com/) calls for data binding. And they are naturally chainable through multiple pipes.
 
-There are two forms of pipes are provided: umbrella-form and direct-form.
+There are two forms of pipes provided: umbrella-form and direct-form.
 
 The umbrella-form pipe (`_`) covers all available functions of lodash. When using the umbrella-form pipe (`_`), an arbitrary function name should be provided as the first argument. You may use the `_` pipe with caution that you should check the function name existence in lodash.
                                                                        
@@ -46,7 +46,7 @@ import { NgxLodashPipesModule } from 'ngx-lodash-pipes';
   ...
 ```
 
-*A module that only exports and declares the umbrella-form pipe (`_`), `NgxLodashPipeModule` is also available in this library. This module takes dramatically light footprint.* 
+*A module that only exports and declares the umbrella-form pipe (`_`), `NgxLodashPipeModule` is also available in this library. This module takes dramatically small footprint.* 
 
 3.Use lodash pipes in your angular component template.
 
@@ -72,6 +72,7 @@ Thanks.
 
 5.Version History
 
+* 0.0.3 ExpressionChangedAfterItHasBeenCheckedError of `_: 'fill'` handled, add some new pipes
 * 0.0.2 remove the umbrella-form pipe (`_`) from the module exports and add an NgxLodashPipeModule to export, add some new pipes
 * 0.0.1 initial version exports the umbrella-form pipe (`_`) and NgxLodashPipesModule with some
 ---
