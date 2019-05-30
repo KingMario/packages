@@ -27,6 +27,7 @@ import { NgxCleaveDirective } from '../lib';
       <textarea #input3 formControlName="fieldB" [cleave]="{blocks: [2, 5, 5]}"></textarea>
       <textarea #input4 formControlName="fieldC" cleave></textarea>
     </div>
+    <textarea [cleave]="{blocks: [2, 5, 5]}"></textarea>
   `,
 })
 class TestComponent {
@@ -62,6 +63,10 @@ describe('NgxCleaveDirective for textarea', () => {
   let component: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
 
+  beforeAll(() => {
+    spyOn(console, 'warn');
+  });
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -80,6 +85,10 @@ describe('NgxCleaveDirective for textarea', () => {
     fixture = TestBed.createComponent(TestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  it('should run console.warn once', async () => {
+    expect(console.warn).toHaveBeenCalled();
   });
 
   it('should cleave initial value of input1', async () => {

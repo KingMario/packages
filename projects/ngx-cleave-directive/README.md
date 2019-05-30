@@ -55,6 +55,8 @@ import { NgxCleaveDirectiveModule } from 'ngx-cleave-directive';
 <input type="text" ... [cleave]="{creditCard: true}">
 ```
 
+**Note: The cleave directive should be used with the ngModel, formControl or formControlName directives.**
+
 4.Import any `cleave.js` addon if needed.
 
 e.g.

@@ -6,6 +6,7 @@ import {
   Input,
   OnDestroy,
   OnInit,
+  Optional,
 } from '@angular/core';
 import {
   ControlValueAccessor,
@@ -35,11 +36,19 @@ export class NgxCleaveDirective implements OnInit, OnDestroy {
 
   constructor (
     private elementRef: ElementRef,
-    @Inject(NG_VALUE_ACCESSOR) private valueAccessors: ControlValueAccessor[],
+    @Inject(NG_VALUE_ACCESSOR) @Optional() private valueAccessors: ControlValueAccessor[],
   ) {
   }
 
   ngOnInit () {
+
+    if (!this.valueAccessors) {
+
+      console.warn('Note: The cleave directive should be used with the ngModel, formControl or formControlName directives.');
+
+      return;
+
+    }
 
     if (this.valueAccessors.length) {
 
