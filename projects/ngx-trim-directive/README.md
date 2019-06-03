@@ -61,5 +61,26 @@ import { NgxTrimDirectiveModule } from 'ngx-trim-directive';
 <input type="text" ... trim="blur">
 ```
 
+5.You may turn trim off by binding false to the trim attribute
+
+```html
+<input type="text" ... [trim]="trimOption">
+<button (click)="trimOption = ''">
+  Trim on Input
+</button>
+<button (click)="trimOption = 'blur'">
+  Trim on Blur
+</button>
+<button (click)="trimOption = false">
+  Turn Trim Off
+</button>
+```
+
+Where `trimOption` is a property of the component class
+
+```typescript
+trimOPtion: '' | 'blur' | false = '';
+```
+
 ---
 Good luck.

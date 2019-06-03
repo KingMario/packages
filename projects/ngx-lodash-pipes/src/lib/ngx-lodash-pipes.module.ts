@@ -20,7 +20,13 @@ import { FindLastIndexPipe } from './array/find-last-index.pipe';
 import { FlattenPipe } from './array/flatten.pipe';
 import { FlattenDeepPipe } from './array/flatten-deep.pipe';
 import { FlattenDepthPipe } from './array/flatten-depth.pipe';
-import { FrompairsPipe } from './array/frompairs.pipe';
+import { FromPairsPipe } from './array/from-pairs.pipe';
+import { HeadPipe } from './array/head.pipe';
+import { IndexOfPipe } from './array/index-of.pipe';
+import { InitialPipe } from './array/initial.pipe';
+import { IntersectionPipe } from './array/intersection.pipe';
+import { IntersectionByPipe } from './array/intersection-by.pipe';
+import { IntersectionWithPipe } from './array/intersection-with.pipe';
 
 // collection
 import { EveryPipe } from './collection/every.pipe';
@@ -42,7 +48,13 @@ const ArrayPipes = [
   FlattenPipe,
   FlattenDeepPipe,
   FlattenDepthPipe,
-  FrompairsPipe,
+  FromPairsPipe,
+  HeadPipe,
+  IndexOfPipe,
+  InitialPipe,
+  IntersectionPipe,
+  IntersectionByPipe,
+  IntersectionWithPipe,
 ];
 
 const CollectionPipes = [

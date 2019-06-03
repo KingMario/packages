@@ -2,6 +2,9 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/ngx-lodash-pipes",
   "lib": {
-    "entryFile": "src/lib/index.ts"
+    "entryFile": "src/lib/index.ts",
+    "umdModuleIds": {
+      "lodash": "_"
+    }
   }
 }

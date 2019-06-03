@@ -86,9 +86,80 @@ export class LodashPipesSampleComponent implements OnInit {
   predicate4FindIndex = { user: 'barney' };
   predicate4FindLastIndex = { active: false };
 
-  array4Flatten = [1, [2, [3, [4]], 5]];
+  array4Flatten = [
+    1,
+    [
+      2,
+      [
+        3,
+        [4],
+      ],
+      5,
+    ],
+  ];
 
-  array4FromPairs = [['a', 1], ['b', 2]];
+  array4FromPairs = [
+    [
+      'a',
+      1,
+    ],
+    [
+      'b',
+      2,
+    ],
+  ];
+
+  array4Head = [
+    1,
+    2,
+    3,
+  ];
+
+  array4IndexOf = [
+    1,
+    2,
+    1,
+    2,
+  ];
+
+  array4Initial = [
+    1,
+    2,
+    3,
+  ];
+
+  array4Intersection = [
+    [
+      2,
+      1,
+    ],
+    [
+      2,
+      3,
+    ],
+  ];
+
+  array4IntersectionBy = [
+    [
+      2.1,
+      1.2,
+    ],
+    [
+      2.3,
+      3.4,
+    ],
+  ];
+
+  array4IntersectionWith = [
+    [
+      { 'x': 1, 'y': 2 },
+      { 'x': 2, 'y': 1 },
+    ],
+    [
+      { 'x': 1, 'y': 1 },
+      { 'x': 1, 'y': 2 },
+    ],
+  ];
 
   array4Every = [
     { 'user': 'barney', 'age': 36, 'active': false },

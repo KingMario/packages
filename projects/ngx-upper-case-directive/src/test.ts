@@ -1,11 +1,11 @@
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
 // polyfills
-import 'core-js/es6/object';
-import 'core-js/es6/string';
-import 'core-js/es6/array';
+import 'core-js/es/object';
+import 'core-js/es/string';
+import 'core-js/es/array';
 
-import 'core-js/es7/reflect';
+import 'core-js/es/reflect';
 import 'zone.js/dist/zone';
 import 'zone.js/dist/zone-testing';
 import { getTestBed } from '@angular/core/testing';

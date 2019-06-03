@@ -1,6 +1,7 @@
 <div [formGroup]="formA">
   <input type="text" formControlName="fieldA" trim="blur">
   <input type="text" formControlName="fieldB" trim>
+  <input type="text" formControlName="fieldC" [trim]="false">
 
   <div>
     Field A:
@@ -10,6 +11,11 @@
   <div>
     Field B:
     <pre>"{{fieldB.value}}"</pre>
+  </div>
+
+  <div>
+    Field C:
+    <pre>"{{fieldC.value}}"</pre>
   </div>
 </div>
 

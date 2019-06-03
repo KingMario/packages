@@ -4,19 +4,19 @@ import {
 } from '@angular/core';
 
 import {
+  Dictionary,
   fromPairs,
   List,
   PropertyName,
-  Dictionary,
 } from 'lodash';
 
 @Pipe({
   name: 'fromPairs',
 })
-export class FrompairsPipe implements PipeTransform {
+export class FromPairsPipe implements PipeTransform {
 
-  transform<T>(
-    pairs: List<[PropertyName, T]> | null | undefined
+  transform<T> (
+    pairs: List<[PropertyName, T]> | null | undefined,
   ): Dictionary<T> {
     return fromPairs(pairs);
   }

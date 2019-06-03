@@ -15,7 +15,7 @@ import {
   TestBed,
 } from '@angular/core/testing';
 
-import { NgxTrimDirective } from '../lib/ngx-trim.directive';
+import { NgxTrimDirective } from '../lib';
 
 @Component({
   template: `
@@ -25,16 +25,18 @@ import { NgxTrimDirective } from '../lib/ngx-trim.directive';
     </div>
     <div [formGroup]="formB">
       <input type="text" #input3 formControlName="fieldB" trim="blur">
-      <input type="text" #input4 formControlName="fieldC" trim>
+      <input type="text" #input4 formControlName="fieldC" [trim]="trimOption">
     </div>
   `,
 })
 class TestComponent {
-  @ViewChild('input1') input1: ElementRef;
-  @ViewChild('input2') input2: ElementRef;
-  @ViewChild('input3') input3: ElementRef;
-  @ViewChild('input4') input4: ElementRef;
+  @ViewChild('input1', { static: false }) input1: ElementRef;
+  @ViewChild('input2', { static: false }) input2: ElementRef;
+  @ViewChild('input3', { static: false }) input3: ElementRef;
+  @ViewChild('input4', { static: false }) input4: ElementRef;
+  @ViewChild('input5', { static: false }) input5: ElementRef;
 
+  trimOption: '' | 'blur' | false = '';
   readonly fieldA = new FormControl('');
   readonly formA = new FormGroup({
     fieldA: this.fieldA,
@@ -150,6 +152,30 @@ describe('NgxTrimDirective', () => {
     el4.dispatchEvent(new Event('blur'));
     expect(el4.value).toBe('ngxTrimDirective');
     expect(component.fieldC.value).toBe('ngxTrimDirective');
+  });
+
+  it('should not update the value of fieldC on input if trimOption is false', () => {
+    const el4 = component.input4.nativeElement;
+    component.trimOption = false;
+    fixture.detectChanges();
+
+    el4.value = 'ngxTrimDirective   ';
+    el4.dispatchEvent(new Event('input'));
+    expect(el4.value).toBe('ngxTrimDirective   ');
+    expect(component.fieldC.value).toBe('');
+
+  });
+
+  it('should not trim the value of input4 on blur if trimOption is false', () => {
+    const el4 = component.input4.nativeElement;
+    component.trimOption = false;
+    fixture.detectChanges();
+
+    el4.value = 'ngxTrimDirective   ';
+    el4.dispatchEvent(new Event('input'));  // set _pendingChange
+    el4.dispatchEvent(new Event('blur'));
+    expect(el4.value).toBe('ngxTrimDirective   ');
+    expect(component.fieldC.value).toBe('ngxTrimDirective   ');
   });
 
 });

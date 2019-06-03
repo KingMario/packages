@@ -15,7 +15,7 @@ import {
   TestBed,
 } from '@angular/core/testing';
 
-import { NgxCleaveDirective } from '../lib/ngx-cleave.directive';
+import { NgxCleaveDirective } from '../lib';
 
 @Component({
   template: `
@@ -31,10 +31,10 @@ import { NgxCleaveDirective } from '../lib/ngx-cleave.directive';
   `,
 })
 class TestComponent {
-  @ViewChild('input1') input1: ElementRef;
-  @ViewChild('input2') input2: ElementRef;
-  @ViewChild('input3') input3: ElementRef;
-  @ViewChild('input4') input4: ElementRef;
+  @ViewChild('input1', { static: false }) input1: ElementRef;
+  @ViewChild('input2', { static: false }) input2: ElementRef;
+  @ViewChild('input3', { static: false }) input3: ElementRef;
+  @ViewChild('input4', { static: false }) input4: ElementRef;
 
   readonly fieldA = new FormControl('7654321');
   readonly formA = new FormGroup({
@@ -107,15 +107,16 @@ describe('NgxCleaveDirective', () => {
     expect(component.value).toBe('4621 0000 9876 2224');
   });
 
-  it('should cleave the value of input1 on ngModel changed', () => {
+  it('should cleave the value of input1 on ngModel changed', async () => {
     const el1 = component.input1.nativeElement;
 
     component.value = '4621000098762224';
+    fixture.detectChanges();
 
-    fixture.whenStable().then(() => {
-      expect(el1.value).toBe('4621 0000 9876 2224');
-      expect(component.value).toBe('4621 0000 9876 2224');
-    });
+    await fixture.whenStable();
+
+    expect(el1.value).toBe('4621 0000 9876 2224');
+    expect(component.value).toBe('4621 0000 9876 2224');
   });
 
   it('should cleave initial value of input2', () => {

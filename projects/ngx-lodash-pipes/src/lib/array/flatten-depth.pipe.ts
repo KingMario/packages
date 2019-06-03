@@ -13,7 +13,7 @@ import {
 })
 export class FlattenDepthPipe implements PipeTransform {
 
-  transform<T>(array: ListOfRecursiveArraysOrValues<T> | null | undefined, depth?: number): T[] {
+  transform<T> (array: ListOfRecursiveArraysOrValues<T> | null | undefined, depth?: number): T[] {
     return flattenDepth(array, depth);
   }
 

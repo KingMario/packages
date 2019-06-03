@@ -46,7 +46,7 @@ Manually tested in Firefox.
 
 ## Development & Contribution
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3, and would be regularly updated to the latest version of Angular and other dependencies.
 
 ### Development server
 

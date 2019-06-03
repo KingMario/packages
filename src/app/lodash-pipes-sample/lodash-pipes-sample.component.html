@@ -9,15 +9,33 @@
     </h4>
 
     <div>
-      <em>{{array4Chunk | json}} | _: 'chunk' : 2 | json</em>
+      <em>{{array4Chunk | json}} | _: 'chunk': 2 | json</em>
       =>
-      {{array4Chunk | _: 'chunk' : 2 | json}}
+      {{array4Chunk | _: 'chunk': 2 | json}}
     </div>
 
     <div>
-      <em>{{array4Fill | json}} | _: 'fill' : 'a' | json</em>
+      <em>{{array4Fill | json}} | _: 'fill': 'a' | json</em>
       =>
-      {{array4Fill | _: 'fill' : 'a' | json}}
+      {{array4Fill | _: 'fill': 'a' | json}}
+    </div>
+
+    <div>
+      <em>{{array4Head | json}} | _: 'head' | json</em>
+      =>
+      {{array4Head | _: 'head' | json}}
+    </div>
+
+    <div>
+      <em>{{array4IndexOf | json}} | _: 'indexOf': 2 | json</em>
+      =>
+      {{array4IndexOf | _: 'indexOf': 2 | json}}
+    </div>
+
+    <div>
+      <em>{{array4IndexOf | json}} | _: 'indexOf': 2: 2 | json</em>
+      =>
+      {{array4IndexOf | _: 'indexOf': 2: 2 | json}}
     </div>
   </li>
 
@@ -27,9 +45,9 @@
     </h4>
 
     <div>
-      <em>{{array4Chunk | json}} | _: 'jellyfish' : 2 | json</em>
+      <em>{{array4Chunk | json}} | _: 'jellyfish': 2 | json</em>
       =>
-      {{array4Chunk | _: 'jellyfish' : 2 | json}}
+      {{array4Chunk | _: 'jellyfish': 2 | json}}
     </div>
   </li>
 
@@ -158,6 +176,48 @@
     =>
     {{array4FromPairs | fromPairs | json}}
     <a href="https://lodash.com/docs#fromPairs" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>head {{array4Head | json}}</em>
+    =>
+    {{array4Head | head | json}}
+    <a href="https://lodash.com/docs#head" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>indexOf {{array4IndexOf | json}} by 2,  2</em>
+    =>
+    {{array4IndexOf | indexOf: 2: 2 | json}}
+    <a href="https://lodash.com/docs#indexOf" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>initial {{array4Initial | json}}</em>
+    =>
+    {{array4Initial | initial | json}}
+    <a href="https://lodash.com/docs#initial" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>intersection {{array4Intersection[0] | json}} by {{array4Intersection[1] | json}}</em>
+    =>
+    {{array4Intersection[0] | intersection: array4Intersection[1] | json}}
+    <a href="https://lodash.com/docs#intersection" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>intersectionBy {{array4IntersectionBy[0] | json}} by {{array4IntersectionBy[1] | json}}, Math.floor</em>
+    =>
+    {{array4IntersectionBy[0] | intersectionBy: array4IntersectionBy[1]: floorIteratee | json}}
+    <a href="https://lodash.com/docs#intersectionBy" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>intersectionWith {{array4IntersectionWith[0] | json}} by {{array4IntersectionWith[1] | json}}, _.isEqual</em>
+    =>
+    {{array4IntersectionWith[0] | intersectionWith: array4IntersectionWith[1]: isEqual | json}}
+    <a href="https://lodash.com/docs#intersectionWith" target="_docs">reference</a>
   </li>
 </ul>
 

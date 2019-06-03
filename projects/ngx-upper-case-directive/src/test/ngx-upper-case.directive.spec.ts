@@ -15,7 +15,7 @@ import {
   TestBed,
 } from '@angular/core/testing';
 
-import { NgxUpperCaseDirective } from '../lib/ngx-upper-case.directive';
+import { NgxUpperCaseDirective } from '../lib';
 
 @Component({
   template: `
@@ -30,10 +30,10 @@ import { NgxUpperCaseDirective } from '../lib/ngx-upper-case.directive';
   `,
 })
 class TestComponent {
-  @ViewChild('input1') input1: ElementRef;
-  @ViewChild('input2') input2: ElementRef;
-  @ViewChild('input3') input3: ElementRef;
-  @ViewChild('input4') input4: ElementRef;
+  @ViewChild('input1', { static: false }) input1: ElementRef;
+  @ViewChild('input2', { static: false }) input2: ElementRef;
+  @ViewChild('input3', { static: false }) input3: ElementRef;
+  @ViewChild('input4', { static: false }) input4: ElementRef;
 
   readonly fieldA = new FormControl('');
   readonly formA = new FormGroup({
