@@ -65,6 +65,13 @@ e.g.
 import 'cleave.js/dist/addons/cleave-phone.au-cn.js';
 ````
 
+5.Cleave.js version compatibility
+
+| Cleave.js | ngx-cleave-directive |
+| --- | --- |
+| 1.3.7 ~ 1.5.0 | 1.0.x |
+| 1.5.1+ | 1.1.x |
+
 For more details, please refer to [cleave.js official site](https://nosir.github.io/cleave.js/).
 
 ---

@@ -13,7 +13,7 @@ import {
   NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 
-import * as Cleave from 'cleave.js';
+import Cleave from 'cleave.js';
 
 @Directive({
   selector: 'input[cleave],textarea[cleave]',
