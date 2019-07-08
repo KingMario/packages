@@ -27,6 +27,15 @@ import { InitialPipe } from './array/initial.pipe';
 import { IntersectionPipe } from './array/intersection.pipe';
 import { IntersectionByPipe } from './array/intersection-by.pipe';
 import { IntersectionWithPipe } from './array/intersection-with.pipe';
+import { JoinPipe } from './array/join.pipe';
+import { LastPipe } from './array/last.pipe';
+import { LastIndexOfPipe } from './array/last-index-of.pipe';
+import { NthPipe } from './array/nth.pipe';
+import { PullPipe } from './array/pull.pipe';
+import { PullAllPipe } from './array/pull-all.pipe';
+import { PullAllByPipe } from './array/pull-all-by.pipe';
+import { PullAllWithPipe } from './array/pull-all-with.pipe';
+import { PullAtPipe } from './array/pull-at.pipe';
 
 // collection
 import { EveryPipe } from './collection/every.pipe';
@@ -55,6 +64,15 @@ const ArrayPipes = [
   IntersectionPipe,
   IntersectionByPipe,
   IntersectionWithPipe,
+  JoinPipe,
+  LastPipe,
+  LastIndexOfPipe,
+  NthPipe,
+  PullPipe,
+  PullAllPipe,
+  PullAllByPipe,
+  PullAllWithPipe,
+  PullAtPipe,
 ];
 
 const CollectionPipes = [

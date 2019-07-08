@@ -161,6 +161,76 @@ export class LodashPipesSampleComponent implements OnInit {
     ],
   ];
 
+  array4Join = [
+    'a',
+    'b',
+    'c',
+  ];
+
+  array4Last = [
+    1,
+    2,
+    3,
+  ];
+
+  array4LastIndexOf = [
+    1,
+    2,
+    1,
+    2,
+  ];
+
+  array4Nth = [
+    'a',
+    'b',
+    'c',
+    'd',
+  ];
+
+  array4Pull = [
+    'a',
+    'b',
+    'c',
+    'a',
+    'b',
+    'c',
+  ];
+
+  array4PullAllBy = [
+    [
+      { 'x': 1 },
+      { 'x': 2 },
+      { 'x': 3 },
+      { 'x': 1 },
+    ],
+    [
+      { 'x': 1 },
+      { 'x': 3 },
+    ],
+  ];
+
+  array4PullAllWith = [
+    [
+      { 'x': 1, 'y': 2 },
+      { 'x': 3, 'y': 4 },
+      { 'x': 5, 'y': 6 },
+    ],
+    [{ 'x': 3, 'y': 4 }],
+  ];
+
+  array4PullAt = {
+    0: [
+      'a',
+      'b',
+      'c',
+      'd',
+    ],
+    1: [
+      1,
+      3,
+    ],
+  };
+
   array4Every = [
     { 'user': 'barney', 'age': 36, 'active': false },
     { 'user': 'fred', 'age': 40, 'active': false },

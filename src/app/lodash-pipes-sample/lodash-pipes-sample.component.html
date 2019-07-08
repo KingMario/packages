@@ -37,6 +37,12 @@
       =>
       {{array4IndexOf | _: 'indexOf': 2: 2 | json}}
     </div>
+
+    <div>
+      <em>{{array4PullAt[0] | json}} | _: 'pullAt': {{array4PullAt[1] | json}} | json</em>
+      =>
+      {{array4PullAt[0] | _: 'pullAt': array4PullAt[1] | json}}
+    </div>
   </li>
 
   <li>
@@ -218,6 +224,69 @@
     =>
     {{array4IntersectionWith[0] | intersectionWith: array4IntersectionWith[1]: isEqual | json}}
     <a href="https://lodash.com/docs#intersectionWith" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>join {{array4Join | json}} by ~</em>
+    =>
+    {{array4Join | join: '~' | json}}
+    <a href="https://lodash.com/docs#join" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>last {{array4Last | json}}</em>
+    =>
+    {{array4Last | last | json}}
+    <a href="https://lodash.com/docs#last" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>lastIndexOf {{array4LastIndexOf | json}} by 2, 2</em>
+    =>
+    {{array4LastIndexOf | lastIndexOf: 2: 2}}
+    <a href="https://lodash.com/docs#lastIndexOf" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>nth {{array4Nth | json}} by -2</em>
+    =>
+    {{array4Nth | nth: -2}}
+    <a href="https://lodash.com/docs#nth" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>pull {{array4Pull | json}} by 'a', 'c'</em>
+    =>
+    {{array4Pull | pull: 'a': 'c' | json}}
+    <a href="https://lodash.com/docs#pull" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>pullAll {{array4Pull | json}} by ['a', 'c']</em>
+    =>
+    {{array4Pull | pullAll: ['a', 'c'] | json}}
+    <a href="https://lodash.com/docs#pullAll" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>pullAllBy {{array4PullAllBy[0] | json}} by {{array4PullAllBy[1] | json}}, 'x'</em>
+    =>
+    {{array4PullAllBy[0] | pullAllBy: array4PullAllBy[1]: 'x' | json}}
+    <a href="https://lodash.com/docs#pullAllBy" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>pullAllWith {{array4PullAllWith[0] | json}} by {{array4PullAllWith[1] | json}}, _.isEqual</em>
+    =>
+    {{array4PullAllWith[0] | pullAllWith: array4PullAllWith[1]: isEqual | json}}
+    <a href="https://lodash.com/docs#pullAllWith" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>pullAt {{array4PullAt[0] | json}} by {{array4PullAt[1] | json}}</em>
+    =>
+    {{array4PullAt[0] | pullAt: array4PullAt[1] | json}}
+    <a href="https://lodash.com/docs#pullAt" target="_docs">reference</a>
   </li>
 </ul>
 
