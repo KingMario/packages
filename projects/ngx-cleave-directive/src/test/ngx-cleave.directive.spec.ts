@@ -24,7 +24,7 @@ import { NgxCleaveDirective } from '../lib';
       <input type="text" #input2 formControlName="fieldA" [cleave]="numeralOption">
     </div>
     <div [formGroup]="formB">
-      <input type="text" #input3 formControlName="fieldB" [cleave]="{blocks: [2, 5, 5]}">
+      <input type="text" #input3 formControlName="fieldB" [cleave]="{blocks: [2, 5, 5], onValueChanged: onValueChanged}">
       <input type="text" #input4 formControlName="fieldC" cleave>
     </div>
     <input [cleave]="{blocks: [2, 5, 5]}">
@@ -56,6 +56,10 @@ class TestComponent {
   });
 
   value = '123412345123456';
+
+  public onValueChanged ({ target }) {
+    console.log(target);
+  }
 }
 
 describe('NgxCleaveDirective', () => {
@@ -63,8 +67,16 @@ describe('NgxCleaveDirective', () => {
   let component: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
 
+  const _log = console.log;
+  const noop = function () {};
+
   beforeAll(() => {
+    console.log = noop;
     spyOn(console, 'warn');
+  });
+
+  afterAll(() => {
+    console.log = _log;
   });
 
   beforeEach(async(() => {
@@ -87,7 +99,7 @@ describe('NgxCleaveDirective', () => {
     fixture.detectChanges();
   });
 
-  it('should run console.warn once', async () => {
+  it('should call console.warn', async () => {
     expect(console.warn).toHaveBeenCalled();
   });
 
@@ -164,6 +176,8 @@ describe('NgxCleaveDirective', () => {
   });
 
   it('should cleave the value of input3 on input', () => {
+    spyOn(console, 'log');
+
     const el3 = component.input3.nativeElement;
 
     el3.value = 'anapplea day';
@@ -173,6 +187,8 @@ describe('NgxCleaveDirective', () => {
 
     el3.dispatchEvent(new Event('blur'));
     expect(component.fieldB.value).toBe('an apple aday');
+
+    expect(console.log).toHaveBeenCalledTimes(2);
   });
 
   it('should not cleave the value of input4', () => {

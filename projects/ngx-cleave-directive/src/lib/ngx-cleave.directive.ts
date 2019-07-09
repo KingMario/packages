@@ -109,6 +109,12 @@ export class NgxCleaveDirective implements OnInit, OnDestroy {
           this.dispatchEvent(el, 'input');
 
         }
+
+        if (this._cleave.onValueChanged && typeof this._cleave.onValueChanged === 'function') {
+
+          this._cleave.onValueChanged({ target });
+
+        }
       },
     });
 
