@@ -19,9 +19,10 @@ export class PullAllWithPipe implements PipeTransform {
     values?: List<T>,
     comparator?: Comparator<T>,
   ): T[] {
-    const array4PullAllWith = [...array];
+    // tslint:disable-next-line: prefer-const
+    let array4PullAllWith = [...array];
 
-    return pullAllWith(array4PullAllWith, values, comparator);
+    return pullAllWith(array4PullAllWith, values, comparator); // pullALlWith returns the mutated array
   }
 
 }

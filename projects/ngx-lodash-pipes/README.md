@@ -72,6 +72,9 @@ Thanks.
 
 5.Version History
 
+* 0.0.6 add some new pipes
+* 0.0.5 ExpressionChangedAfterItHasBeenCheckedError of `_: 'pull'` etc. handled, add some new pipes
+* 0.0.4 Angular 8 compiler, umdModuleIds for lodash, add some new pipes
 * 0.0.3 ExpressionChangedAfterItHasBeenCheckedError of `_: 'fill'` handled, add some new pipes
 * 0.0.2 remove the umbrella-form pipe (`_`) from the module exports and add an NgxLodashPipeModule to export, add some new pipes
 * 0.0.1 initial version exports the umbrella-form pipe (`_`) and NgxLodashPipesModule with some

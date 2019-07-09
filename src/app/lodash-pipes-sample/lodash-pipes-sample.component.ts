@@ -231,12 +231,93 @@ export class LodashPipesSampleComponent implements OnInit {
     ],
   };
 
+  array4Remove = [
+    1,
+    2,
+    3,
+    4,
+  ];
+
+  array4Reverse = [
+    1,
+    2,
+    3,
+  ];
+
+  array4Slice = [
+    1,
+    2,
+    3,
+    4,
+    5,
+  ];
+
+  array4SortedIndex = [
+    30,
+    50,
+  ];
+
+  array4SortedIndexBy = {
+    0: [
+      { x: 4 },
+      { x: 5 },
+    ],
+    1: { x: 4 },
+  };
+
+  array4SortedIndexOf = [
+    4,
+    5,
+    5,
+    5,
+    6,
+  ];
+
+  array4SortedLastIndex = [
+    4,
+    5,
+    5,
+    5,
+    6,
+  ];
+
+  array4SortedLastIndexBy = {
+    0: [
+      { x: 4 },
+      { x: 5 },
+    ],
+    1: { x: 4 },
+  };
+
+  array4SortedLastIndexOf = [
+    4,
+    5,
+    5,
+    5,
+    6,
+  ];
+
+  array4SortedUniq = [
+      1,
+      1,
+      2,
+    ];
+
+  array4SortedUniqBy = [
+    1.1,
+    1.2,
+    2.3,
+    2.4,
+  ];
+
   array4Every = [
     { 'user': 'barney', 'age': 36, 'active': false },
     { 'user': 'fred', 'age': 40, 'active': false },
   ];
 
   func4DropWhile = (o) => !o.active;
+
+  func4Remove = (n) => n % 2 === 0;
 
   ngOnInit () {
   }

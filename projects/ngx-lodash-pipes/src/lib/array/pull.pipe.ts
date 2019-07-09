@@ -14,9 +14,10 @@ export class PullPipe implements PipeTransform {
     array: T[],
     ...values: T[]
   ): T[] {
-    const array4Pull = [...array];
+    // tslint:disable-next-line: prefer-const
+    let array4Pull = [...array];
 
-    return pull(array4Pull, ...values);
+    return pull(array4Pull, ...values); // pull returns the mutated array
   }
 
 }

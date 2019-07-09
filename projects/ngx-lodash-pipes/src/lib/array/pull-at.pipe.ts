@@ -17,9 +17,10 @@ export class PullAtPipe implements PipeTransform {
     array: T[],
     ...indexes: Array<Many<number>>
   ): T[] {
-    const array4PullAt = [...array];
+    // tslint:disable-next-line: prefer-const
+    let array4PullAt = [...array];
 
-    pullAt(array4PullAt, ...indexes);
+    pullAt(array4PullAt, ...indexes); // pullAt returns an array of the removed elements
 
     return array4PullAt;
   }

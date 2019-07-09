@@ -36,6 +36,17 @@ import { PullAllPipe } from './array/pull-all.pipe';
 import { PullAllByPipe } from './array/pull-all-by.pipe';
 import { PullAllWithPipe } from './array/pull-all-with.pipe';
 import { PullAtPipe } from './array/pull-at.pipe';
+import { RemovePipe } from './array/remove.pipe';
+import { ReversePipe } from './array/reverse.pipe';
+import { SlicePipe } from './array/slice.pipe';
+import { SortedIndexPipe } from './array/sorted-index.pipe';
+import { SortedIndexByPipe } from './array/sorted-index-by.pipe';
+import { SortedIndexOfPipe } from './array/sorted-index-of.pipe';
+import { SortedLastIndexPipe } from './array/sorted-last-index.pipe';
+import { SortedLastIndexByPipe } from './array/sorted-last-index-by.pipe';
+import { SortedLastIndexOfPipe } from './array/sorted-last-index-of.pipe';
+import { SortedUniqPipe } from './array/sorted-uniq.pipe';
+import { SortedUniqByPipe } from './array/sorted-uniq-by.pipe';
 
 // collection
 import { EveryPipe } from './collection/every.pipe';
@@ -73,6 +84,17 @@ const ArrayPipes = [
   PullAllByPipe,
   PullAllWithPipe,
   PullAtPipe,
+  RemovePipe,
+  ReversePipe,
+  SlicePipe,
+  SortedIndexPipe,
+  SortedIndexByPipe,
+  SortedIndexOfPipe,
+  SortedLastIndexPipe,
+  SortedLastIndexByPipe,
+  SortedLastIndexOfPipe,
+  SortedUniqPipe,
+  SortedUniqByPipe,
 ];
 
 const CollectionPipes = [

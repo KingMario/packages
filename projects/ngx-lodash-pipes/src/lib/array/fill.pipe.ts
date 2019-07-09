@@ -16,9 +16,10 @@ export class FillPipe implements PipeTransform {
     start?: number,
     end?: number,
   ): Array<T | U> {
-    const array4Fill = [...array];
+    // tslint:disable-next-line: prefer-const
+    let array4Fill = [...array];
 
-    return fill(array4Fill, value, start, end);
+    return fill(array4Fill, value, start, end); // fill returns the mutated array
   }
 
 }

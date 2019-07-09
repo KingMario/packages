@@ -192,7 +192,7 @@
   </li>
 
   <li>
-    <em>indexOf {{array4IndexOf | json}} by 2,  2</em>
+    <em>indexOf {{array4IndexOf | json}} by 2, 2</em>
     =>
     {{array4IndexOf | indexOf: 2: 2 | json}}
     <a href="https://lodash.com/docs#indexOf" target="_docs">reference</a>
@@ -287,6 +287,83 @@
     =>
     {{array4PullAt[0] | pullAt: array4PullAt[1] | json}}
     <a href="https://lodash.com/docs#pullAt" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>remove {{array4Remove | json}} by (n) => n % 2 === 0</em>
+    =>
+    {{array4Remove | remove: func4Remove | json}}
+    <a href="https://lodash.com/docs#remove" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>reverse {{array4Reverse | json}}</em>
+    =>
+    {{array4Reverse | reverse | json}}
+    <a href="https://lodash.com/docs#reverse" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>slice {{array4Slice | json}} by 2, 4</em>
+    =>
+    {{array4Slice | slice: 2: 4 | json}}
+    <a href="https://lodash.com/docs#slice" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>sortedIndex {{array4SortedIndex | json}} by 40</em>
+    =>
+    {{array4SortedIndex | sortedIndex: 40 | json}}
+    <a href="https://lodash.com/docs#sortedIndex" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>sortedIndexBy {{array4SortedIndexBy[0] | json}} by {{array4SortedIndexBy[1] | json}}, 'x'</em>
+    =>
+    {{array4SortedIndexBy[0] | sortedIndexBy: array4SortedIndexBy[1]: 'x' | json}}
+    <a href="https://lodash.com/docs#sortedIndexBy" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>sortedIndexOf {{array4SortedIndexOf | json}} by 5</em>
+    =>
+    {{array4SortedIndexOf | sortedIndexOf: 5 | json}}
+    <a href="https://lodash.com/docs#sortedIndexOf" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>sortedLastIndex {{array4SortedLastIndex | json}} by 5</em>
+    =>
+    {{array4SortedLastIndex | sortedLastIndex: 5 | json}}
+    <a href="https://lodash.com/docs#sortedLastIndex" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>sortedLastIndexBy {{array4SortedLastIndexBy[0] | json}} by {{array4SortedIndexBy[1] | json}}, 'x'</em>
+    =>
+    {{array4SortedLastIndexBy[0] | sortedLastIndexBy: array4SortedLastIndexBy[1]: 'x' | json}}
+    <a href="https://lodash.com/docs#sortedLastIndexBy" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>sortedLastIndexOf {{array4SortedLastIndexOf | json}} by 5</em>
+    =>
+    {{array4SortedLastIndexOf | sortedLastIndexOf: 5 | json}}
+    <a href="https://lodash.com/docs#sortedLastIndexOf" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>sortedUniq {{array4SortedUniq| json}}</em>
+    =>
+    {{array4SortedUniq | sortedUniq | json}}
+    <a href="https://lodash.com/docs#sortedUniq" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>sortedUniqBy {{array4SortedUniqBy| json}} by Math.floor</em>
+    =>
+    {{array4SortedUniqBy | sortedUniqBy: floorIteratee | json}}
+    <a href="https://lodash.com/docs#sortedUniqBy" target="_docs">reference</a>
   </li>
 </ul>
 

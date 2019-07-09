@@ -18,16 +18,17 @@ export class LodashPipe implements PipeTransform {
     const func = _[lodashMemberName];
 
     if (_.isFunction(func)) {
-      // array mutation members
-      const arrayRewritingMembers = [
+      const arrayMutationMembers = [
         'fill',
         'pull',
         'pullAll',
         'pullAllBy',
         'pullAllWith',
-        'pullAt', // this function returns the values pulled
+        'pullAt', // this function returns the values pulled,
+        'remove', // this function returns the values removed,
+        'reverse',
       ];
-      if (arrayRewritingMembers.indexOf(lodashMemberName) > -1) {
+      if (arrayMutationMembers.indexOf(lodashMemberName) > -1) {
         // to avoid ExpressionChangedAfterItHasBeenCheckedError
         // tslint:disable-next-line: prefer-const
         let toBeMutated = [...value];

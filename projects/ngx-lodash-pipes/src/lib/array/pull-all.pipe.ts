@@ -17,9 +17,10 @@ export class PullAllPipe implements PipeTransform {
     array: T[],
     values?: List<T>,
   ): T[] {
-    const array4PullAll = [...array];
+    // tslint:disable-next-line: prefer-const
+    let array4PullAll = [...array];
 
-    return pullAll(array4PullAll, values);
+    return pullAll(array4PullAll, values); // pullALl returns the mutated array
   }
 
 }

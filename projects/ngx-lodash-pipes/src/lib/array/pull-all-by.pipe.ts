@@ -14,14 +14,15 @@ import {
 })
 export class PullAllByPipe implements PipeTransform {
 
-  transform<T>(
+  transform<T> (
     array: T[],
     values?: List<T>,
-    iteratee?: ValueIteratee<T>
+    iteratee?: ValueIteratee<T>,
   ): T[] {
-    const array4PullAllBy = [...array];
+    // tslint:disable-next-line: prefer-const
+    let array4PullAllBy = [...array];
 
-    return pullAllBy(array4PullAllBy, values, iteratee);
+    return pullAllBy(array4PullAllBy, values, iteratee); // pullAllBy returns the mutated array
   }
 
 }
