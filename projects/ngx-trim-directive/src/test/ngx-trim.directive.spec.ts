@@ -34,7 +34,6 @@ class TestComponent {
   @ViewChild('input2', { static: false }) input2: ElementRef;
   @ViewChild('input3', { static: false }) input3: ElementRef;
   @ViewChild('input4', { static: false }) input4: ElementRef;
-  @ViewChild('input5', { static: false }) input5: ElementRef;
 
   trimOption: '' | 'blur' | false = '';
   readonly fieldA = new FormControl('');

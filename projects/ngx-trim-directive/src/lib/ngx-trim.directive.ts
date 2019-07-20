@@ -23,8 +23,11 @@ export class NgxTrimDirective {
 
     this._trim = value;
 
-    if (value !== false) {
-      NgxTrimDirective.dispatchEvent(this.elementRef.nativeElement, 'blur');
+    const elem = this.elementRef.nativeElement;
+    const eleValue = elem.value;
+    if (value !== false && eleValue !== eleValue.trim()) {
+      // initially trim the value if needed
+      NgxTrimDirective.dispatchEvent(elem, 'blur');
     }
   }
 
