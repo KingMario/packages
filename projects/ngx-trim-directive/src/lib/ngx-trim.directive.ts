@@ -2,13 +2,21 @@ import {
   Directive,
   ElementRef,
   HostListener,
+  Inject,
   Input,
+  OnDestroy,
+  OnInit,
+  Optional,
 } from '@angular/core';
+import {
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 
 @Directive({
   selector: 'input[trim],textarea[trim]',
 })
-export class NgxTrimDirective {
+export class NgxTrimDirective implements OnInit, OnDestroy {
 
   private _trim: '' | 'blur' | false;
   @Input('trim')
@@ -35,8 +43,12 @@ export class NgxTrimDirective {
     return this._trim;
   }
 
+  private _valueAccessor: ControlValueAccessor;
+  private _writeValue: (value) => void;
+
   constructor (
     private elementRef: ElementRef,
+    @Inject(NG_VALUE_ACCESSOR) @Optional() private valueAccessors: ControlValueAccessor[],
   ) {
   }
 
@@ -71,6 +83,55 @@ export class NgxTrimDirective {
     el.value = value.trim();
 
     NgxTrimDirective.dispatchEvent(el, 'input');
+
+  }
+
+  ngOnInit (): void {
+
+    if (!this.valueAccessors) {
+
+      console.warn('Note: The trim directive should be used with one of ngModel, formControl or formControlName directives.');
+
+      return;
+
+    }
+
+    if (this.valueAccessors.length) {
+
+      this._valueAccessor = this.valueAccessors[0];
+
+      this._writeValue = this._valueAccessor.writeValue;
+      this._valueAccessor.writeValue = (value) => {
+
+        const _value = value.trim();
+
+        if (this._writeValue) {
+          this._writeValue.call(this._valueAccessor, _value);
+        }
+
+        if (value !== _value) {
+          if (this._valueAccessor['onChange']) {
+            this._valueAccessor['onChange'](_value);
+          }
+
+          if (this._valueAccessor['onTouched']) {
+            this._valueAccessor['onTouched']();
+          }
+        }
+
+      };
+
+    }
+
+  }
+
+  ngOnDestroy (): void {
+
+    if (this._valueAccessor && this._writeValue) {
+
+      this._valueAccessor.writeValue = this._writeValue;
+
+    }
 
   }
 

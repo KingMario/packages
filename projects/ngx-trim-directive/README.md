@@ -82,5 +82,17 @@ Where `trimOption` is a property of the component class
 trimOPtion: '' | 'blur' | false = '';
 ```
 
+6.Version History
+
+* 1.0.6 trim value after setValue of formControl, not initially trim value for `trim="blur"` or for ngModel bug fixed
+* 1.0.5 [#5](https://github.com/KingMario/packages/issues/5) bug fixed
+* 1.0.4 initially trim value, trim bound to false processed, some methods changed to static
+* 1.0.3 textarea supported
+* 1.0.2 readme improvements
+* 1.0.1 `blur` updateOn option processed
+* 1.0.0 stable version
+* 0.0.2 simplify the getCaret way for IE
+* 0.0.1 initial version
+
 ---
 Good luck.

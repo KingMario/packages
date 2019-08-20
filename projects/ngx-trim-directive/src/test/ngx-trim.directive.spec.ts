@@ -36,12 +36,12 @@ class TestComponent {
   @ViewChild('input4', { static: false }) input4: ElementRef;
 
   trimOption: '' | 'blur' | false = '';
-  readonly fieldA = new FormControl('');
+  readonly fieldA = new FormControl('ngxTrimDirective   ');
   readonly formA = new FormGroup({
     fieldA: this.fieldA,
   });
 
-  readonly fieldB = new FormControl('');
+  readonly fieldB = new FormControl('   ');
   readonly fieldC = new FormControl('');
   readonly formB = new FormGroup({
     fieldB: this.fieldB,
@@ -50,11 +50,10 @@ class TestComponent {
     updateOn: 'blur',
   });
 
-  value = '';
+  value = '   ngxTrimDirective';
 }
 
 describe('NgxTrimDirective', () => {
-
   let component: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
 
@@ -78,6 +77,26 @@ describe('NgxTrimDirective', () => {
     fixture.detectChanges();
   });
 
+  it('should trim the value of input1 initially', async () => {
+    await fixture.whenStable();
+
+    const el1 = component.input1.nativeElement;
+
+    expect(el1.value).toBe('ngxTrimDirective');
+    expect(component.value).toBe('ngxTrimDirective');
+  });
+
+  it('should trim the value of input1 on set ngModel value', async () => {
+    const el1 = component.input1.nativeElement;
+
+    component.value = 'ngxTrimDirective   ';
+
+    await fixture.whenStable();
+
+    expect(el1.value).toBe('ngxTrimDirective');
+    expect(component.value).toBe('ngxTrimDirective');
+  });
+
   it('should trim the value of input1 on input or blur', () => {
     const el1 = component.input1.nativeElement;
 
@@ -95,6 +114,15 @@ describe('NgxTrimDirective', () => {
     el1.dispatchEvent(new Event('blur'));
     expect(el1.value).toBe('ngxTrimDirective');
     expect(component.value).toBe('ngxTrimDirective');
+  });
+
+  it('should trim the value of input2 initially', async () => {
+    await fixture.whenStable();
+
+    const el2 = component.input2.nativeElement;
+
+    expect(el2.value).toBe('ngxTrimDirective');
+    expect(component.fieldA.value).toBe('ngxTrimDirective');
   });
 
   it('should not trim the value of input2 on input', () => {
@@ -123,6 +151,15 @@ describe('NgxTrimDirective', () => {
     expect(el3.value).toBe('ngxTrimDirective   ');
     expect(component.fieldB.value).toBe('');
 
+  });
+
+  it('should trim the value of input3 after setValue', () => {
+    const el3 = component.input3.nativeElement;
+
+    component.fieldB.setValue('ngxTrimDirective   ');
+
+    expect(el3.value).toBe('ngxTrimDirective');
+    expect(component.fieldB.value).toBe('ngxTrimDirective');
   });
 
   it('should trim the value of input3 on blur', () => {
