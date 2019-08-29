@@ -2,7 +2,6 @@ import {
   Directive,
   ElementRef,
   HostListener,
-  Inject,
   Input,
   OnDestroy,
   OnInit,
@@ -10,7 +9,7 @@ import {
 } from '@angular/core';
 import {
   ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
+  NgControl,
 } from '@angular/forms';
 
 @Directive({
@@ -48,7 +47,7 @@ export class NgxTrimDirective implements OnInit, OnDestroy {
 
   constructor (
     private elementRef: ElementRef,
-    @Inject(NG_VALUE_ACCESSOR) @Optional() private valueAccessors: ControlValueAccessor[],
+    @Optional() private ngControl: NgControl,
   ) {
   }
 
@@ -88,7 +87,7 @@ export class NgxTrimDirective implements OnInit, OnDestroy {
 
   ngOnInit (): void {
 
-    if (!this.valueAccessors) {
+    if (!this.ngControl) {
 
       console.warn('Note: The trim directive should be used with one of ngModel, formControl or formControlName directives.');
 
@@ -96,32 +95,28 @@ export class NgxTrimDirective implements OnInit, OnDestroy {
 
     }
 
-    if (this.valueAccessors.length) {
+    this._valueAccessor = this.ngControl.valueAccessor;
 
-      this._valueAccessor = this.valueAccessors[0];
+    this._writeValue = this._valueAccessor.writeValue;
+    this._valueAccessor.writeValue = (value) => {
 
-      this._writeValue = this._valueAccessor.writeValue;
-      this._valueAccessor.writeValue = (value) => {
+      const _value = value.trim();
 
-        const _value = value.trim();
+      if (this._writeValue) {
+        this._writeValue.call(this._valueAccessor, _value);
+      }
 
-        if (this._writeValue) {
-          this._writeValue.call(this._valueAccessor, _value);
+      if (value !== _value) {
+        if (this._valueAccessor['onChange']) {
+          this._valueAccessor['onChange'](_value);
         }
 
-        if (value !== _value) {
-          if (this._valueAccessor['onChange']) {
-            this._valueAccessor['onChange'](_value);
-          }
-
-          if (this._valueAccessor['onTouched']) {
-            this._valueAccessor['onTouched']();
-          }
+        if (this._valueAccessor['onTouched']) {
+          this._valueAccessor['onTouched']();
         }
+      }
 
-      };
-
-    }
+    };
 
   }
 

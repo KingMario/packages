@@ -84,6 +84,7 @@ trimOPtion: '' | 'blur' | false = '';
 
 6.Version History
 
+* 1.0.7 use NgControl DI to get the ValueAccessor
 * 1.0.6 trim value after setValue of formControl, not initially trim value for `trim="blur"` or for ngModel bug fixed
 * 1.0.5 [#5](https://github.com/KingMario/packages/issues/5) bug fixed
 * 1.0.4 initially trim value, trim bound to false processed, some methods changed to static

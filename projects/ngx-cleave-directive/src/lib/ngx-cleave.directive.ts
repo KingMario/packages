@@ -2,7 +2,6 @@ import {
   Directive,
   ElementRef,
   HostListener,
-  Inject,
   Input,
   OnDestroy,
   OnInit,
@@ -10,7 +9,7 @@ import {
 } from '@angular/core';
 import {
   ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
+  NgControl,
 } from '@angular/forms';
 
 import Cleave from 'cleave.js';
@@ -36,13 +35,13 @@ export class NgxCleaveDirective implements OnInit, OnDestroy {
 
   constructor (
     private elementRef: ElementRef,
-    @Inject(NG_VALUE_ACCESSOR) @Optional() private valueAccessors: ControlValueAccessor[],
+    @Optional() private ngControl: NgControl,
   ) {
   }
 
   ngOnInit () {
 
-    if (!this.valueAccessors) {
+    if (!this.ngControl) {
 
       console.warn('Note: The cleave directive should be used with the ngModel, formControl or formControlName directives.');
 
@@ -50,22 +49,18 @@ export class NgxCleaveDirective implements OnInit, OnDestroy {
 
     }
 
-    if (this.valueAccessors.length) {
+    this._valueAccessor = this.ngControl.valueAccessor;
 
-      this._valueAccessor = this.valueAccessors[0];
+    this._writeValue = this._valueAccessor.writeValue;
+    this._valueAccessor.writeValue = (value) => {
 
-      this._writeValue = this._valueAccessor.writeValue;
-      this._valueAccessor.writeValue = (value) => {
+      if (this._writeValue) {
+        this._writeValue.call(this._valueAccessor, value);
+      }
 
-        if (this._writeValue) {
-          this._writeValue.call(this._valueAccessor, value);
-        }
+      this.setCleave();
 
-        this.setCleave();
-
-      };
-
-    }
+    };
 
   }
 
