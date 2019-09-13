@@ -50,10 +50,21 @@ import { NgxLodashPipesModule } from 'ngx-lodash-pipes';
 
 3.Use lodash pipes in your angular component template.
 
-```html
+interpolation:
+
+```angular2html
 Umbrella-form: {{ [ 'a', 'b', 'c', 'd' ]  | _: 'chunk' : 2}}
 
 Direct-form: {{ [ 'a', 'b', 'c', 'd' ]  | chunk: 2}}
+```
+
+and more you want to do than interpolation:
+
+```angular2html
+<div *ngFor="let pair of [ 'a', 'b', 'c', 'd' ] | chunk: 2 as pairs">
+  <!-- Do something with the looping variable, pair -->
+  <!-- and even with the list, pairs -->
+</div>
 ```
 
 4.How to contribute?
@@ -72,6 +83,7 @@ Thanks.
 
 5.Version History
 
+* 0.0.7 Array pipes finished
 * 0.0.6 add some new pipes
 * 0.0.5 ExpressionChangedAfterItHasBeenCheckedError of `_: 'pull'` etc. handled, add some new pipes
 * 0.0.4 Angular 8 compiler, umdModuleIds for lodash, add some new pipes

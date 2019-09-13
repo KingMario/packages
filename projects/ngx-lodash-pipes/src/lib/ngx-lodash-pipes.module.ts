@@ -47,6 +47,27 @@ import { SortedLastIndexByPipe } from './array/sorted-last-index-by.pipe';
 import { SortedLastIndexOfPipe } from './array/sorted-last-index-of.pipe';
 import { SortedUniqPipe } from './array/sorted-uniq.pipe';
 import { SortedUniqByPipe } from './array/sorted-uniq-by.pipe';
+import { TailPipe } from './array/tail.pipe';
+import { TakePipe } from './array/take.pipe';
+import { TakeRightPipe } from './array/take-right.pipe';
+import { TakeRightWhilePipe } from './array/take-right-while.pipe';
+import { TakeWhilePipe } from './array/take-while.pipe';
+import { UnionPipe } from './array/union.pipe';
+import { UnionByPipe } from './array/union-by.pipe';
+import { UnionWithPipe } from './array/union-with.pipe';
+import { UniqPipe } from './array/uniq.pipe';
+import { UniqByPipe } from './array/uniq-by.pipe';
+import { UniqWithPipe } from './array/uniq-with.pipe';
+import { UnzipPipe } from './array/unzip.pipe';
+import { UnzipWithPipe } from './array/unzip-with.pipe';
+import { WithoutPipe } from './array/without.pipe';
+import { XorPipe } from './array/xor.pipe';
+import { XorByPipe } from './array/xor-by.pipe';
+import { XorWithPipe } from './array/xor-with.pipe';
+import { ZipPipe } from './array/zip.pipe';
+import { ZipObjectPipe } from './array/zip-object.pipe';
+import { ZipObjectDeepPipe } from './array/zip-object-deep.pipe';
+import { ZipWithPipe } from './array/zip-with.pipe';
 
 // collection
 import { EveryPipe } from './collection/every.pipe';
@@ -95,6 +116,27 @@ const ArrayPipes = [
   SortedLastIndexOfPipe,
   SortedUniqPipe,
   SortedUniqByPipe,
+  TailPipe,
+  TakePipe,
+  TakeRightPipe,
+  TakeRightWhilePipe,
+  TakeWhilePipe,
+  UnionPipe,
+  UnionByPipe,
+  UnionWithPipe,
+  UniqPipe,
+  UniqByPipe,
+  UniqWithPipe,
+  UnzipPipe,
+  UnzipWithPipe,
+  WithoutPipe,
+  XorPipe,
+  XorByPipe,
+  XorWithPipe,
+  ZipPipe,
+  ZipObjectPipe,
+  ZipObjectDeepPipe,
+  ZipWithPipe,
 ];
 
 const CollectionPipes = [

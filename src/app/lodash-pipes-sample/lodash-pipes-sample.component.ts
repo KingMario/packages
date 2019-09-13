@@ -3,7 +3,10 @@ import {
   OnInit,
 } from '@angular/core';
 
-import { isEqual } from 'lodash';
+import {
+  add,
+  isEqual,
+} from 'lodash';
 
 @Component({
   selector: 'app-lodash-pipes-sample',
@@ -298,16 +301,194 @@ export class LodashPipesSampleComponent implements OnInit {
   ];
 
   array4SortedUniq = [
-      1,
-      1,
-      2,
-    ];
+    1,
+    1,
+    2,
+  ];
 
   array4SortedUniqBy = [
     1.1,
     1.2,
     2.3,
     2.4,
+  ];
+
+  array4Tail = [
+    1,
+    2,
+    3,
+  ];
+
+  array4Take = [
+    1,
+    2,
+    3,
+  ];
+
+  array4TakeWhile = [
+    { 'user': 'barney', 'active': true },
+    { 'user': 'fred', 'active': false },
+    { 'user': 'pebbles', 'active': false },
+  ];
+
+  array4Union = [
+    [2],
+    [
+      1,
+      2,
+    ],
+  ];
+
+  array4UnionBy = [
+    [2.1],
+    [
+      1.2,
+      2.3,
+    ],
+  ];
+
+  array4UnionWith = [
+    { 'x': 1, 'y': 2 },
+    { 'x': 2, 'y': 1 },
+  ];
+  otherArray4UnionWith = [
+    { 'x': 1, 'y': 1 },
+    { 'x': 1, 'y': 2 },
+  ];
+
+  array4Uniq = [
+    2,
+    1,
+    2,
+  ];
+
+  array4UniqBy = [
+    2.1,
+    1.2,
+    2.3,
+  ];
+
+  array4UniqWith = [
+    { 'x': 1, 'y': 2 },
+    { 'x': 2, 'y': 1 },
+    { 'x': 1, 'y': 2 },
+  ];
+
+  array4Unzip = [
+    [
+      'a',
+      1,
+      true,
+    ],
+    [
+      'b',
+      2,
+      false,
+    ],
+  ];
+
+  array4UnzipWith = [
+    [
+      1,
+      10,
+      100,
+    ],
+    [
+      2,
+      20,
+      200,
+    ],
+  ];
+  add = add;
+
+  array4Without = [
+    2,
+    1,
+    2,
+    3,
+  ];
+
+  array4Xor = [
+    [
+      2,
+      1,
+    ],
+    [
+      2,
+      3,
+    ],
+  ];
+
+  array4XorBy = [
+    [
+      2.1,
+      1.2,
+    ],
+    [
+      2.3,
+      3.4,
+    ],
+  ];
+
+  array4XorWith = [
+    { 'x': 1, 'y': 2 },
+    { 'x': 2, 'y': 1 },
+  ];
+  otherArray4XorWith = [
+    { 'x': 1, 'y': 1 },
+    { 'x': 1, 'y': 2 },
+  ];
+
+  array4Zip = [
+    [
+      'a',
+      'b',
+    ],
+    [
+      1,
+      2,
+    ],
+    [
+      true,
+      false,
+    ],
+  ];
+
+  array4ZipObject = [
+    [
+      'a',
+      'b',
+    ],
+    [
+      1,
+      2,
+    ],
+  ];
+
+  array4ZipObjectDeep = [
+    [
+      'a.b[0].c',
+      'a.b[1].d',
+    ],
+    [
+      1,
+      2,
+    ],
+  ];
+
+  array4ZipWith = [
+    [
+      1,
+      2,
+    ],
+    [
+      10,
+      20,
+    ],
+    [
+      100,
+      200,
+    ],
   ];
 
   array4Every = [
@@ -318,6 +499,10 @@ export class LodashPipesSampleComponent implements OnInit {
   func4DropWhile = (o) => !o.active;
 
   func4Remove = (n) => n % 2 === 0;
+
+  func4TakeWhile = (o) => !o.active;
+
+  func4ZipWith = (a, b, c) => a + b + c;
 
   ngOnInit () {
   }

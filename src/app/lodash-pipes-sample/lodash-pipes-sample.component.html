@@ -365,6 +365,154 @@
     {{array4SortedUniqBy | sortedUniqBy: floorIteratee | json}}
     <a href="https://lodash.com/docs#sortedUniqBy" target="_docs">reference</a>
   </li>
+
+  <li>
+    <em>tail {{array4Tail| json}}</em>
+    =>
+    {{array4Tail | tail | json}}
+    <a href="https://lodash.com/docs#tail" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>take {{array4Take| json}} by 2</em>
+    =>
+    {{array4Take | take: 2 | json}}
+    <a href="https://lodash.com/docs#take" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>takeRight {{array4Take| json}} by 2</em>
+    =>
+    {{array4Take | takeRight: 2 | json}}
+    <a href="https://lodash.com/docs#takeRight" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>takeRightWhile {{array4TakeWhile | json}} by {{func4TakeWhile}}</em>
+    =>
+    {{array4TakeWhile | takeRightWhile: func4TakeWhile | json}}
+    <a href="https://lodash.com/docs#takeRightWhile" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>takeWhile {{array4TakeWhile | json}} by 'active'</em>
+    =>
+    {{array4TakeWhile | takeWhile: 'active' | json}}
+    <a href="https://lodash.com/docs#takeWhile" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>union {{array4Union | json}}</em>
+    =>
+    {{array4Union[0] | union: array4Union[1] | json}}
+    <a href="https://lodash.com/docs#union" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>unionBy {{array4UnionBy | json}} by Math.floor</em>
+    =>
+    {{array4UnionBy[0] | unionBy: array4UnionBy[1]: floorIteratee | json}}
+    <a href="https://lodash.com/docs#unionBy" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>unionWith {{array4UnionWith | json}} by {{otherArray4UnionWith | json}}, _.isEqual</em>
+    =>
+    {{array4UnionWith | unionWith: otherArray4UnionWith: isEqual | json}}
+    <a href="https://lodash.com/docs#unionWith" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>uniq {{array4Uniq | json}}</em>
+    =>
+    {{array4Uniq | uniq | json}}
+    <a href="https://lodash.com/docs#uniq" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>uniqBy {{array4UniqBy | json}}</em>
+    =>
+    {{array4UniqBy | uniqBy: floorIteratee | json}}
+    <a href="https://lodash.com/docs#uniqBy" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>uniqWith {{array4UniqWith | json}} by _.isEqual</em>
+    =>
+    {{array4UniqWith | uniqWith: isEqual | json}}
+    <a href="https://lodash.com/docs#uniqWith" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>unzip {{array4Unzip | json}}</em>
+    =>
+    {{array4Unzip | unzip | json}}
+    <a href="https://lodash.com/docs#unzip" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>unzipWith {{array4UnzipWith | json}} by _.add</em>
+    =>
+    {{array4UnzipWith | unzipWith: add | json}}
+    <a href="https://lodash.com/docs#unzipWith" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>without {{array4Without | json}} by 1, 2</em>
+    =>
+    {{array4Without | without: 1: 2 | json}}
+    <a href="https://lodash.com/docs#without" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>xor {{array4Xor[0] | json}} by {{array4Xor[1] | json}}</em>
+    =>
+    {{array4Xor[0] | xor: array4Xor[1] | json}}
+    <a href="https://lodash.com/docs#xor" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>xorBy {{array4XorBy[0] | json}} by {{array4XorBy[1] | json}}, Math.floor</em>
+    =>
+    {{array4XorBy[0] | xorBy: array4XorBy[1]: floorIteratee | json}}
+    <a href="https://lodash.com/docs#xorBy" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>xorWith {{array4XorWith | json}} by {{otherArray4XorWith | json}}, _.isEqual</em>
+    =>
+    {{array4XorWith | xorWith: otherArray4XorWith: isEqual | json}}
+    <a href="https://lodash.com/docs#xorWith" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>zip {{array4Zip[0] | json}} by {{array4Zip[1] | json}}, {{array4Zip[2] | json}}</em>
+    =>
+    {{array4Zip[0] | zip: array4Zip[1]: array4Zip[2] | json}}
+    <a href="https://lodash.com/docs#zip" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>zipObject {{array4ZipObject[0] | json}} by {{array4ZipObject[1] | json}}</em>
+    =>
+    {{array4ZipObject[0] | zipObject: array4ZipObject[1] | json}}
+    <a href="https://lodash.com/docs#zipObject" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>zipObjectDeep {{array4ZipObjectDeep[0] | json}} by {{array4ZipObjectDeep[1] | json}}</em>
+    =>
+    {{array4ZipObjectDeep[0] | zipObjectDeep: array4ZipObjectDeep[1] | json}}
+    <a href="https://lodash.com/docs#zipObjectDeep" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>zipWith {{array4ZipWith[0] | json}} by {{array4ZipWith[1] | json}}, {{array4ZipWith[2] | json}}, {{func4ZipWith}}</em>
+    =>
+    {{array4ZipWith[0] | zipWith: array4ZipWith[1]: array4ZipWith[2]: func4ZipWith | json}}
+    <a href="https://lodash.com/docs#zipWith" target="_docs">reference</a>
+  </li>
+
 </ul>
 
 <h4>Collection</h4>
