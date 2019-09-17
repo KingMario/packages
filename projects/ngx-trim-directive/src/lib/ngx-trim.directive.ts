@@ -19,20 +19,20 @@ export class NgxTrimDirective implements OnInit, OnDestroy {
 
   private _trim: '' | 'blur' | false;
   @Input('trim')
-  public set trim (value: '' | 'blur' | false) {
-    if (value !== '' && value !== 'blur' && value !== false) {
-      console.warn(`Note: The value ${JSON.stringify(value)} is not assignable to the trim attribute.
+  public set trim (trimOption: '' | 'blur' | false) {
+    if (trimOption !== '' && trimOption !== 'blur' && trimOption !== false) {
+      console.warn(`Note: The value ${JSON.stringify(trimOption)} is not assignable to the trim attribute.
         Only blank string (""), "blur" or false is allowed.`);
 
       this._trim = false;
       return;
     }
 
-    this._trim = value;
+    this._trim = trimOption;
 
     const elem = this.elementRef.nativeElement;
     const eleValue = elem.value;
-    if (value !== false && eleValue !== eleValue.trim()) {
+    if (trimOption !== false && eleValue !== eleValue.trim()) {
       // initially trim the value if needed
       NgxTrimDirective.dispatchEvent(elem, 'blur');
     }
@@ -100,7 +100,7 @@ export class NgxTrimDirective implements OnInit, OnDestroy {
     this._writeValue = this._valueAccessor.writeValue;
     this._valueAccessor.writeValue = (value) => {
 
-      const _value = value.trim();
+      const _value = value && value.trim();
 
       if (this._writeValue) {
         this._writeValue.call(this._valueAccessor, _value);

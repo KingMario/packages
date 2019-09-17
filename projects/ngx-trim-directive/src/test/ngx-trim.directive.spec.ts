@@ -19,6 +19,7 @@ import { NgxTrimDirective } from '../lib';
 
 @Component({
   template: `
+    <input type="text" #input0 [(ngModel)]="uninitializedValue" trim>
     <input type="text" #input1 [(ngModel)]="value" trim>
     <div [formGroup]="formA">
       <input type="text" #input2 formControlName="fieldA" trim="blur">
@@ -30,6 +31,7 @@ import { NgxTrimDirective } from '../lib';
   `,
 })
 class TestComponent {
+  @ViewChild('input0', { static: false }) input0: ElementRef;
   @ViewChild('input1', { static: false }) input1: ElementRef;
   @ViewChild('input2', { static: false }) input2: ElementRef;
   @ViewChild('input3', { static: false }) input3: ElementRef;
@@ -49,6 +51,8 @@ class TestComponent {
   }, {
     updateOn: 'blur',
   });
+
+  uninitializedValue: string;
 
   value = '   ngxTrimDirective';
 }
