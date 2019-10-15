@@ -84,6 +84,7 @@ trimOPtion: '' | 'blur' | false = '';
 
 6.Version History
 
+* 1.0.10 minor update to keep non-string model untouched
 * 1.0.9 [#8](https://github.com/KingMario/packages/issues/8) trim not-a-function bug in writeValue fixed
 * 1.0.8 [#7](https://github.com/KingMario/packages/issues/7) Angular 8 compatibility issue addressed
 * 1.0.7 use NgControl DI to get the ValueAccessor
