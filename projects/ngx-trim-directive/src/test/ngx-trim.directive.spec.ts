@@ -147,6 +147,20 @@ describe('NgxTrimDirective', () => {
     expect(component.fieldA.value).toBe('ngxTrimDirective');
   });
 
+  it('should treat the value of fieldB with kid gloves', () => {
+    const el3 = component.input3.nativeElement;
+
+    component.fieldB.setValue(true);
+    el3.dispatchEvent(new Event('blur'));
+    expect(el3.value).toBe('true');
+    expect(component.fieldB.value).toBe('true');
+
+    component.fieldB.setValue(3);
+    el3.dispatchEvent(new Event('blur'));
+    expect(el3.value).toBe('3');
+    expect(component.fieldB.value).toBe('3');
+  });
+
   it('should not update the value of fieldB on input', () => {
     const el3 = component.input3.nativeElement;
 

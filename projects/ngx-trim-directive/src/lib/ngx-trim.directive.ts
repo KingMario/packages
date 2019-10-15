@@ -100,7 +100,9 @@ export class NgxTrimDirective implements OnInit, OnDestroy {
     this._writeValue = this._valueAccessor.writeValue;
     this._valueAccessor.writeValue = (value) => {
 
-      const _value = value && value.trim();
+      const _value = this.trim === false
+        ? value
+        : value && `${value}`.trim();
 
       if (this._writeValue) {
         this._writeValue.call(this._valueAccessor, _value);

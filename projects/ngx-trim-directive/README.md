@@ -84,7 +84,8 @@ trimOPtion: '' | 'blur' | false = '';
 
 6.Version History
 
-* 1.0.7 #7 Angular 8 compatibility issue addressed
+* 1.0.9 [#8](https://github.com/KingMario/packages/issues/8) trim not-a-function bug in writeValue fixed
+* 1.0.8 [#7](https://github.com/KingMario/packages/issues/7) Angular 8 compatibility issue addressed
 * 1.0.7 use NgControl DI to get the ValueAccessor
 * 1.0.6 trim value after setValue of formControl, not initially trim value for `trim="blur"` or for ngModel bug fixed
 * 1.0.5 [#5](https://github.com/KingMario/packages/issues/5) bug fixed
