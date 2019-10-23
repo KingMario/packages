@@ -1,0 +1,285 @@
+<h4>Collection</h4>
+
+<ul>
+
+  <li>
+    <em>countBy {{array4CountBy | json}} by Math.floor</em>
+    =>
+    {{array4CountBy | countBy: floor | json}}
+    <a href="https://lodash.com/docs#countBy" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>countBy {{object4CountBy | json}} by Math.floor</em>
+    =>
+    {{object4CountBy | countBy: floor | json}}
+    <a href="https://lodash.com/docs#countBy" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>every {{array4Every | json}} by ['active', false]</em>
+    =>
+    {{array4Every | every: ['active', false] | json}}
+    <a href="https://lodash.com/docs#every" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>every {{object4Every | json}} by ['active', false]</em>
+    =>
+    {{object4Every | every: ['active', false] | json}}
+    <a href="https://lodash.com/docs#every" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>filter {{array4Filter | json}} by {{inactive}}</em>
+    =>
+    {{array4Filter | filter: inactive | json}}
+    <a href="https://lodash.com/docs#filter" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>find {{array4Find | json}} by {{youngerThan40}}</em>
+    =>
+    {{array4Find | find: youngerThan40 | json}}
+    <a href="https://lodash.com/docs#find" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>findLast {{array4FindLast | json}} by {{odd}}</em>
+    =>
+    {{array4FindLast | findLast: odd | json}}
+    <a href="https://lodash.com/docs#findLast" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>flatMap {{array4FlatMap | json}} by {{duplicate}}</em>
+    =>
+    {{array4FlatMap | flatMap: duplicate | json}}
+    <a href="https://lodash.com/docs#flatMap" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>flatMapDeep {{array4FlatMapDeep | json}} by {{deepDuplicate}}</em>
+    =>
+    {{array4FlatMapDeep | flatMapDeep: deepDuplicate | json}}
+    <a href="https://lodash.com/docs#flatMapDeep" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>flatMapDepth {{array4FlatMapDepth | json}} by {{deepDuplicate}}, 2</em>
+    =>
+    {{array4FlatMapDepth | flatMapDepth: deepDuplicate: 2 | json}}
+    <a href="https://lodash.com/docs#flatMapDepth" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>forEach {{array4ForEach | json}} by {{logValue}}</em>
+    =>
+    {{array4ForEach | forEach: logValue | json}}
+    <a href="https://lodash.com/docs#forEach" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>forEach {{object4ForEach | json}} by {{logKey}}</em>
+    =>
+    {{object4ForEach | forEach: logKey | json}}
+    <a href="https://lodash.com/docs#forEach" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>forEachRight {{array4ForEachRight | json}} by {{logValue}}</em>
+    =>
+    {{array4ForEachRight | forEachRight: logValue | json}}
+    <a href="https://lodash.com/docs#forEachRight" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>groupBy {{array4GroupBy | json}} by Math.floor</em>
+    =>
+    {{array4GroupBy | groupBy: floor | json}}
+    <a href="https://lodash.com/docs#groupBy" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>includes {{object4Includes | json}} by 1</em>
+    =>
+    {{object4Includes | includes: 1 | json}}
+    <a href="https://lodash.com/docs#includes" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>includes {{array4Includes | json}} by 1, 2</em>
+    =>
+    {{array4Includes | includes: 1: 2 | json}}
+    <a href="https://lodash.com/docs#includes" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>includes 'abcd' by 'ab'</em>
+    =>
+    {{'abcd' | includes: 'ab' | json}}
+    <a href="https://lodash.com/docs#includes" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>invokeMap {{array4InvokeMap | json}} by 'sort'</em>
+    =>
+    {{array4InvokeMap | invokeMap: 'sort' | json}}
+    <a href="https://lodash.com/docs#invokeMap" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>invokeMap {{array4InvokeMap2 | json}} by String.prototype.split, ''</em>
+    =>
+    {{array4InvokeMap2 | invokeMap: split: '' | json}}
+    <a href="https://lodash.com/docs#invokeMap" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>keyBy {{array4KeyBy | json}} by {{fromObjectCodeProperty}}</em>
+    =>
+    {{array4KeyBy | keyBy: fromObjectCodeProperty | json}}
+    <a href="https://lodash.com/docs#keyBy" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>keyBy {{array4KeyBy | json}} by 'dir'</em>
+    =>
+    {{array4KeyBy | keyBy: 'dir' | json}}
+    <a href="https://lodash.com/docs#keyBy" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>map {{array4Map | json}} by {{square}}</em>
+    =>
+    {{array4Map | map: square | json}}
+    <a href="https://lodash.com/docs#map" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>map {{array4Map2 | json}} by 'user'</em>
+    =>
+    {{array4Map2 | map: 'user' | json}}
+    <a href="https://lodash.com/docs#map" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>map {{object4Map | json}} by {{square}}</em>
+    =>
+    {{object4Map | map: square | json}}
+    <a href="https://lodash.com/docs#map" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>orderBy {{array4OrderBy | json}} by ['user', 'age'], ['asc', 'desc']</em>
+    =>
+    {{array4OrderBy | orderBy: ['user', 'age']: ['asc', 'desc'] | json}}
+    <a href="https://lodash.com/docs#orderBy" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>partition {{array4Partition | json}} by 'active'</em>
+    =>
+    {{array4Partition | partition: 'active' | json}}
+    <a href="https://lodash.com/docs#partition" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>reduce {{array4Reduce | json}} by _.add</em>
+    =>
+    {{array4Reduce | reduce: add | json}}
+    <a href="https://lodash.com/docs#reduce" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>reduce {{object4Reduce | json}} by {{groupByValue}}</em>
+    =>
+    {{object4Reduce | reduce: groupByValue: {} | json}}
+    <a href="https://lodash.com/docs#reduce" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>reduceRight {{array4ReduceRight | json}} by {{flatten}}</em>
+    =>
+    {{array4ReduceRight | reduceRight: flatten: [] | json}}
+    <a href="https://lodash.com/docs#reduceRight" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>reject {{array4Reject | json}} by 'active'</em>
+    =>
+    {{array4Reject | reject: 'active' | json}}
+    <a href="https://lodash.com/docs#reject" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>sample {{array4Sample | json}}</em>
+    =>
+    {{array4Sample | sample | json}}
+    <a href="https://lodash.com/docs#sample" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>sampleSize {{array4Sample | json}} by 2</em>
+    =>
+    {{array4Sample | sampleSize: 2 | json}}
+    <a href="https://lodash.com/docs#sampleSize" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>sampleSize {{array4Sample | json}} by 7</em>
+    =>
+    {{array4Sample | sampleSize: 7 | json}}
+    <a href="https://lodash.com/docs#sampleSize" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>shuffle {{array4Shuffle | json}}</em>
+    =>
+    {{array4Shuffle | shuffle | json}}
+    <a href="https://lodash.com/docs#shuffle" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>size {{array4Size | json}}</em>
+    =>
+    {{array4Size | size | json}}
+    <a href="https://lodash.com/docs#size" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>size {{object4Size | json}}</em>
+    =>
+    {{object4Size | size | json}}
+    <a href="https://lodash.com/docs#size" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>size {{string4Size | json}}</em>
+    =>
+    {{string4Size | size | json}}
+    <a href="https://lodash.com/docs#size" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>some {{array4Some | json}} by Boolean</em>
+    =>
+    {{array4Some | some: boolean | json}}
+    <a href="https://lodash.com/docs#some" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>some {{object4Some | json}} by ['active', false]</em>
+    =>
+    {{object4Some | some: ['active', false] | json}}
+    <a href="https://lodash.com/docs#some" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>sortBy {{array4SortBy | json}} by ['user', 'age']</em>
+    =>
+    {{array4SortBy | sortBy: ['user', 'age'] | json}}
+    <a href="https://lodash.com/docs#sortBy" target="_docs">reference</a>
+  </li>
+
+</ul>

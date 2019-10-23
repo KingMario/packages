@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 
 import { NgxLowerCaseDirectiveModule } from 'ngx-lower-case-directive';
 import { NgxTrimDirectiveModule } from 'ngx-trim-directive';
@@ -16,6 +19,8 @@ import { TrimSampleComponent } from './trim-sample/trim-sample.component';
 import { UpperCaseSampleComponent } from './upper-case-sample/upper-case-sample.component';
 import { CleaveSampleComponent } from './cleave-sample/cleave-sample.component';
 import { LodashPipesSampleComponent } from './lodash-pipes-sample/lodash-pipes-sample.component';
+import { ArrayPipeSamplesComponent } from './lodash-pipes-sample/array-pipe-samples/array-pipe-samples.component';
+import { CollectionPipeSamplesComponent } from './lodash-pipes-sample/collection-pipe-samples/collection-pipe-samples.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +30,8 @@ import { LodashPipesSampleComponent } from './lodash-pipes-sample/lodash-pipes-s
     UpperCaseSampleComponent,
     CleaveSampleComponent,
     LodashPipesSampleComponent,
+    ArrayPipeSamplesComponent,
+    CollectionPipeSamplesComponent,
   ],
   imports: [
     BrowserModule,

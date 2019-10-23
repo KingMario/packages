@@ -83,6 +83,7 @@ Thanks.
 
 5.Version History
 
+* 0.0.8 Collection pipes finished
 * 0.0.7 Array pipes finished
 * 0.0.6 add some new pipes
 * 0.0.5 ExpressionChangedAfterItHasBeenCheckedError of `_: 'pull'` etc. handled, add some new pipes

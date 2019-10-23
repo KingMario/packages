@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2019. Mario Studio. All right reserved.
+ */
+
 import { NgModule } from '@angular/core';
 
 // umbrella
@@ -70,7 +74,32 @@ import { ZipObjectDeepPipe } from './array/zip-object-deep.pipe';
 import { ZipWithPipe } from './array/zip-with.pipe';
 
 // collection
+import { CountByPipe } from './collection/count-by.pipe';
 import { EveryPipe } from './collection/every.pipe';
+import { FilterPipe } from './collection/filter.pipe';
+import { FindPipe } from './collection/find.pipe';
+import { FindLastPipe } from './collection/find-last.pipe';
+import { FlatMapPipe } from './collection/flat-map.pipe';
+import { FlatMapDeepPipe } from './collection/flat-map-deep.pipe';
+import { FlatMapDepthPipe } from './collection/flat-map-depth.pipe';
+import { ForEachPipe } from './collection/for-each.pipe';
+import { ForEachRightPipe } from './collection/for-each-right.pipe';
+import { GroupByPipe } from './collection/group-by.pipe';
+import { IncludesPipe } from './collection/includes.pipe';
+import { InvokeMapPipe } from './collection/invoke-map.pipe';
+import { KeyByPipe } from './collection/key-by.pipe';
+import { MapPipe } from './collection/map.pipe';
+import { OrderByPipe } from './collection/order-by.pipe';
+import { PartitionPipe } from './collection/partition.pipe';
+import { ReducePipe } from './collection/reduce.pipe';
+import { ReduceRightPipe } from './collection/reduce-right.pipe';
+import { RejectPipe } from './collection/reject.pipe';
+import { SamplePipe } from './collection/sample.pipe';
+import { SampleSizePipe } from './collection/sample-size.pipe';
+import { ShufflePipe } from './collection/shuffle.pipe';
+import { SizePipe } from './collection/size.pipe';
+import { SomePipe } from './collection/some.pipe';
+import { SortByPipe } from './collection/sort-by.pipe';
 
 const ArrayPipes = [
   ChunkPipe,
@@ -140,7 +169,32 @@ const ArrayPipes = [
 ];
 
 const CollectionPipes = [
+  CountByPipe,
   EveryPipe,
+  FilterPipe,
+  FindPipe,
+  FindLastPipe,
+  FlatMapPipe,
+  FlatMapDeepPipe,
+  FlatMapDepthPipe,
+  ForEachPipe,
+  ForEachRightPipe,
+  GroupByPipe,
+  IncludesPipe,
+  InvokeMapPipe,
+  KeyByPipe,
+  MapPipe,
+  OrderByPipe,
+  PartitionPipe,
+  ReducePipe,
+  ReduceRightPipe,
+  RejectPipe,
+  SamplePipe,
+  SampleSizePipe,
+  ShufflePipe,
+  SizePipe,
+  SomePipe,
+  SortByPipe,
 ];
 
 const pipes = [
