@@ -13,7 +13,7 @@ import {
 })
 export class UnzipPipe implements PipeTransform {
 
-  transform<T>(array: T[][] | List<List<T>> | null | undefined): T[][] {
+  transform<T> (array: T[][] | List<List<T>> | null | undefined): T[][] {
     return unzip(array);
   }
 

@@ -13,7 +13,7 @@ import {
 })
 export class ZipPipe implements PipeTransform {
 
-  transform<T>(...arrays: Array<List<T> | null | undefined>): Array<Array<T | undefined>> {
+  transform<T> (...arrays: Array<List<T> | null | undefined>): Array<Array<T | undefined>> {
     return zip(...arrays);
   }
 
