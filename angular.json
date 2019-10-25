@@ -320,6 +320,37 @@
           }
         }
       }
+    },
+    "ngx-let-directive": {
+      "root": "projects/ngx-let-directive",
+      "sourceRoot": "projects/ngx-let-directive/src",
+      "projectType": "library",
+      "prefix": "let",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-let-directive/tsconfig.lib.json",
+            "project": "projects/ngx-let-directive/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-let-directive/ng-package.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-let-directive/tsconfig.lib.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "packages"

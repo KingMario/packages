@@ -1,0 +1,25 @@
+{
+  "name": "ngx-let-directive",
+  "version": "1.0.0",
+  "author": "KingMario <gcyyq@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KingMario/packages/issues"
+  },
+  "homepage": "https://github.com/KingMario/packages#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/KingMario/packages.git"
+  },
+  "keywords": [
+    "angular",
+    "let",
+    "directive",
+    "value",
+    "local variable"
+  ],
+  "peerDependencies": {
+    "@angular/common": ">= 5.0.0",
+    "@angular/core": ">= 5.0.0"
+  }
+}

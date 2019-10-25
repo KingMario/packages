@@ -31,6 +31,9 @@
       ],
       "ngx-lodash-pipes": [
         "dist/ngx-lodash-pipes"
+      ],
+      "ngx-let-directive": [
+        "dist/ngx-let-directive"
       ]
     }
   }

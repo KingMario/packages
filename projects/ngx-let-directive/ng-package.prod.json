@@ -1,0 +1,7 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/ngx-let-directive",
+  "lib": {
+    "entryFile": "src/lib/index.ts"
+  }
+}
