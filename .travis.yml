@@ -23,6 +23,7 @@ script:
   - ng build ngx-upper-case-directive --prod
   - ng lint ngx-lodash-pipes
   - ng build ngx-lodash-pipes --prod
+  - ng build ngx-let-directive --prod
   - ng build --prod --base-href /packages/
   - cp dist/packages/index.html dist/packages/404.html
 
