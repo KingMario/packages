@@ -21,7 +21,9 @@
     "lint:upper-case": "ng lint ngx-upper-case-directive",
     "test:upper-case": "ng test ngx-upper-case-directive",
     "build:lodash-pipes": "rm -rf dist/ngx-lodash-pipes && ng build ngx-lodash-pipes --prod && cp -r projects/ngx-lodash-pipes/src/lib dist/ngx-lodash-pipes/src",
-    "lint:lodash-pipes": "ng lint ngx-lodash-pipes"
+    "lint:lodash-pipes": "ng lint ngx-lodash-pipes",
+    "build:let": "rm -rf dist/ngx-let-directive && ng build ngx-let-directive --prod && cp -r projects/ngx-let-directive/src/lib dist/ngx-let-directive/src",
+    "lint:let": "ng lint ngx-let-directive"
   },
   "private": true,
   "dependencies": {

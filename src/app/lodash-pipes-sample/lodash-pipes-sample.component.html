@@ -65,3 +65,23 @@
 <app-array-pipe-samples></app-array-pipe-samples>
 
 <app-collection-pipe-samples></app-collection-pipe-samples>
+
+<hr>
+
+<h2>Let Directive</h2>
+
+<li>
+  <em>Let tmp = chunk {{array4Chunk | json}} by 2</em>
+  =>
+  <ng-container *let="array4Chunk | chunk: 2 as tmp">
+    {{tmp | json}}
+  </ng-container>
+
+  <br>
+  <button (click)="array4Chunk = [
+      random(1, 50).toString(),
+      'a',
+      random(51,100).toString(),
+      'b'
+    ]">Update array4Chunk</button>
+</li>

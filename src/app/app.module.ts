@@ -9,6 +9,7 @@ import { NgxLowerCaseDirectiveModule } from 'ngx-lower-case-directive';
 import { NgxTrimDirectiveModule } from 'ngx-trim-directive';
 import { NgxUpperCaseDirectiveModule } from 'ngx-upper-case-directive';
 import { NgxCleaveDirectiveModule } from 'ngx-cleave-directive';
+import { NgxLetDirectiveModule } from 'ngx-let-directive';
 import { NgxLodashPipesModule } from 'ngx-lodash-pipes';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -43,6 +44,7 @@ import { CollectionPipeSamplesComponent } from './lodash-pipes-sample/collection
     NgxTrimDirectiveModule,
     NgxUpperCaseDirectiveModule,
     NgxCleaveDirectiveModule,
+    NgxLetDirectiveModule,
     NgxLodashPipesModule,
   ],
   providers: [],

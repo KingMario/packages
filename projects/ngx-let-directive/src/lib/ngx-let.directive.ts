@@ -4,7 +4,6 @@
 
 import {
   Directive,
-  EmbeddedViewRef,
   Input,
   TemplateRef,
   ViewContainerRef,
@@ -14,9 +13,8 @@ import {
 @Directive({ selector: '[let]' })
 export class NgxLetDirective {
   private _context: NgxLetContext = new NgxLetContext();
-  private _viewRef: EmbeddedViewRef<NgxLetContext> | null = null;
 
-  constructor (private _viewContainer: ViewContainerRef, private templateRef: TemplateRef<NgxLetContext>) {
+  constructor (private _viewContainer: ViewContainerRef, private _templateRef: TemplateRef<NgxLetContext>) {
   }
 
   /**
@@ -26,12 +24,9 @@ export class NgxLetDirective {
   set let (value: any) {
     this._context.let = value;
 
-    if (!this._viewRef) {
-      this._viewContainer.clear();
-      if (this.templateRef) {
-        this._viewRef =
-          this._viewContainer.createEmbeddedView(this.templateRef, this._context);
-      }
+    this._viewContainer.clear();
+    if (this._templateRef) {
+      this._viewContainer.createEmbeddedView(this._templateRef, this._context);
     }
   }
 

@@ -1,6 +1,7 @@
 import {
   add,
   isEqual,
+  random,
 } from 'lodash';
 
 export class Functions {
@@ -9,6 +10,7 @@ export class Functions {
 
   add = add;
   isEqual = isEqual;
+  random = random;
 
   floor = Math.floor;
 

@@ -49,5 +49,10 @@ import { NgxLetDirectiveModule } from 'ngx-let-directive';
 </div>
 ```
 
+4.Version History
+
+1.0.1 unable-to-rebind bug fixed
+1.0.0 initial version
+
 ---
 Good luck.
