@@ -13,6 +13,8 @@ import {
   async,
   ComponentFixture,
   TestBed,
+  fakeAsync,
+  tick,
 } from '@angular/core/testing';
 
 import { NgxTrimDirective } from '../lib';
@@ -28,6 +30,19 @@ import { NgxTrimDirective } from '../lib';
       <input type="text" #input3 formControlName="fieldB" trim="blur">
       <input type="text" #input4 formControlName="fieldC" [trim]="trimOption">
     </div>
+    <input
+      type="text"
+      #inputModelValueBoundTwice1
+      [(ngModel)]="modelValueBoundTwice"
+      trim="blur"
+      [trimOnWriteValue]="trimOnWriteValue"
+    />
+    <input
+      type="text"
+      [(ngModel)]="modelValueBoundTwice"
+      trim="blur"
+      [trimOnWriteValue]="trimOnWriteValue"
+    />
   `,
 })
 class TestComponent {
@@ -36,8 +51,11 @@ class TestComponent {
   @ViewChild('input2', { static: false }) input2: ElementRef;
   @ViewChild('input3', { static: false }) input3: ElementRef;
   @ViewChild('input4', { static: false }) input4: ElementRef;
+  @ViewChild('inputModelValueBoundTwice1', { static: false }) inputModelValueBoundTwice1: ElementRef;
 
   trimOption: '' | 'blur' | false = '';
+  trimOnWriteValue = true;
+
   readonly fieldA = new FormControl('ngxTrimDirective   ');
   readonly formA = new FormGroup({
     fieldA: this.fieldA,
@@ -55,6 +73,7 @@ class TestComponent {
   uninitializedValue: string;
 
   value = '   ngxTrimDirective';
+  modelValueBoundTwice = "";
 }
 
 describe('NgxTrimDirective', () => {
@@ -231,5 +250,27 @@ describe('NgxTrimDirective', () => {
     expect(el4.value).toBe('ngxTrimDirective   ');
     expect(component.fieldC.value).toBe('ngxTrimDirective   ');
   });
+
+  it('should trim the model value on input if trimOnWriteValue is true', fakeAsync(() => {
+    component.trimOnWriteValue = true;
+    const el1 = component.inputModelValueBoundTwice1.nativeElement;
+    const newValue = `ngxTrimDirective `;
+    el1.value = newValue;
+    el1.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+    tick();
+    expect(component.modelValueBoundTwice).toBe(newValue.trim());
+  }));
+
+  it('should not trim the model value on input if trimOnWriteValue is false', fakeAsync(() => {
+    component.trimOnWriteValue = false;
+    const el1 = component.inputModelValueBoundTwice1.nativeElement;
+    const newValue = `ngxTrimDirective `;
+    el1.value = newValue;
+    el1.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+    tick();
+    expect(component.modelValueBoundTwice).toBe(newValue);
+  }));
 
 });
