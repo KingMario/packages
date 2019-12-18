@@ -55,6 +55,12 @@ import { NgxTrimDirectiveModule } from 'ngx-trim-directive';
 <input type="text" ... trim>
 ```
 
+Generally, the input value will be trimmed automatically whenever the bound model is initiated or is updated programmatically. There is a boolean trimOnWriteValue property to switch this behavior `on` or `off`. The default value of this property, if omitted, is true, which means the functionality is on. You can turn the functionality off by setting the `trimOnWriteValue` property to false.
+
+```html
+<input type="text" ... trim [trimOnWriteValue]="false">
+```
+
 4.If you want to trim the value ONLY on blur event, you should set the value of trim attribute to `blur`. This is very handy if a whitespace is allowed inside the input text value.
 
 ```html
@@ -82,8 +88,9 @@ Where `trimOption` is a property of the component class
 trimOPtion: '' | 'blur' | false = '';
 ```
 
-6.Version History
+## Version History
 
+* 1.0.11 [#13](https://github.com/KingMario/packages/issues/13) bug fixed, thanks for the contribution from [Timo Peter <img src="https://avatars3.githubusercontent.com/u/16336536?s=46&v=4" height="20" width="20">](https://github.com/tpeter1985)
 * 1.0.10 minor update to keep non-string model untouched
 * 1.0.9 [#8](https://github.com/KingMario/packages/issues/8) trim not-a-function bug in writeValue fixed
 * 1.0.8 [#7](https://github.com/KingMario/packages/issues/7) Angular 8 compatibility issue addressed
@@ -97,6 +104,12 @@ trimOPtion: '' | 'blur' | false = '';
 * 1.0.0 stable version
 * 0.0.2 simplify the getCaret way for IE
 * 0.0.1 initial version
+
+## Contributors
+
+Thank you all for your contribution to this directive!
+
+[<img src="https://avatars3.githubusercontent.com/u/3956876?s=40&v=4" height="20" width="20">](https://github.com/kingmario) [<img src="https://avatars3.githubusercontent.com/u/16336536?s=40&v=4" height="20" width="20">](https://github.com/tpeter1985)
 
 ---
 Good luck.

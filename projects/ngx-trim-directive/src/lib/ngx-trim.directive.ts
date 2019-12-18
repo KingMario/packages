@@ -42,7 +42,7 @@ export class NgxTrimDirective implements OnInit, OnDestroy {
     return this._trim;
   }
 
-  @Input() trimOnWriteValue: boolean = true;
+  @Input() trimOnWriteValue = true;
 
   private _valueAccessor: ControlValueAccessor;
   private _writeValue: (value) => void;
@@ -102,9 +102,9 @@ export class NgxTrimDirective implements OnInit, OnDestroy {
     this._writeValue = this._valueAccessor.writeValue;
     this._valueAccessor.writeValue = (value) => {
       const _value =
-        this.trim === false || !value || !value.trim || !this.trimOnWriteValue
+        this.trim === false || !value || 'function' !== typeof value.trim || !this.trimOnWriteValue
           ? value
-          : value && value.trim();
+          : value.trim();
 
       if (this._writeValue) {
         this._writeValue.call(this._valueAccessor, _value);

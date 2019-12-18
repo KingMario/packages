@@ -73,7 +73,7 @@ class TestComponent {
   uninitializedValue: string;
 
   value = '   ngxTrimDirective';
-  modelValueBoundTwice = "";
+  modelValueBoundTwice = '';
 }
 
 describe('NgxTrimDirective', () => {
