@@ -13,7 +13,7 @@ import {
 } from '@angular/forms';
 
 @Directive({
-  selector: 'input[trim],textarea[trim]',
+  selector: 'input[trim],textarea[trim],ion-input[trim],ion-textarea',
 })
 export class NgxTrimDirective implements OnInit, OnDestroy {
 
@@ -32,9 +32,10 @@ export class NgxTrimDirective implements OnInit, OnDestroy {
 
     const elem = this.elementRef.nativeElement;
     const eleValue = elem.value;
-    if (trimOption !== false && eleValue !== eleValue.trim()) {
+    if (trimOption !== false && eleValue && eleValue !== eleValue.trim()) {
       // initially trim the value if needed
       NgxTrimDirective.dispatchEvent(elem, 'blur');
+      NgxTrimDirective.dispatchEvent(elem, 'ionBlur');
     }
   }
 
@@ -135,10 +136,11 @@ export class NgxTrimDirective implements OnInit, OnDestroy {
   }
 
   @HostListener('blur', [
+    '$event',
     '$event.target',
     '$event.target.value',
   ])
-  onBlur (el: any, value: string): void {
+  onBlur (event: Event|CustomEvent, el: any, value: string): void {
 
     if (this.trim === false) {
 
@@ -149,7 +151,7 @@ export class NgxTrimDirective implements OnInit, OnDestroy {
     if ((this.trim === '' || 'blur' === this.trim) && 'function' === typeof value.trim && value.trim() !== value) {
 
       NgxTrimDirective.trimValue(el, value);
-      NgxTrimDirective.dispatchEvent(el, 'blur'); // in case updateOn is set to blur
+      NgxTrimDirective.dispatchEvent(el, event.type); // in case updateOn is set to blur
 
     }
 
