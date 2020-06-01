@@ -22,6 +22,8 @@ import { CleaveSampleComponent } from './cleave-sample/cleave-sample.component';
 import { LodashPipesSampleComponent } from './lodash-pipes-sample/lodash-pipes-sample.component';
 import { ArrayPipeSamplesComponent } from './lodash-pipes-sample/array-pipe-samples/array-pipe-samples.component';
 import { CollectionPipeSamplesComponent } from './lodash-pipes-sample/collection-pipe-samples/collection-pipe-samples.component';
+import { DatePipeSamplesComponent } from './lodash-pipes-sample/date-pipe-samples/date-pipe-samples.component';
+import { FunctionPipeSamplesComponent } from './lodash-pipes-sample/function-pipe-samples/function-pipe-samples.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { CollectionPipeSamplesComponent } from './lodash-pipes-sample/collection
     LodashPipesSampleComponent,
     ArrayPipeSamplesComponent,
     CollectionPipeSamplesComponent,
+    DatePipeSamplesComponent,
+    FunctionPipeSamplesComponent,
   ],
   imports: [
     BrowserModule,

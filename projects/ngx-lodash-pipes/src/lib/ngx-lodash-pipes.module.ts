@@ -101,6 +101,34 @@ import { SizePipe } from './collection/size.pipe';
 import { SomePipe } from './collection/some.pipe';
 import { SortByPipe } from './collection/sort-by.pipe';
 
+// date
+import { NowPipe } from './date/now.pipe';
+
+// function
+import { AfterPipe } from './function/after.pipe';
+import { AryPipe } from './function/ary.pipe';
+import { BeforePipe } from './function/before.pipe';
+import { BindPipe } from './function/bind.pipe';
+import { BindKeyPipe } from './function/bind-key.pipe';
+import { CurryPipe } from './function/curry.pipe';
+import { CurryRightPipe } from './function/curry-right.pipe';
+import { DebouncePipe } from './function/debounce.pipe';
+import { DeferPipe } from './function/defer.pipe';
+import { DelayPipe } from './function/delay.pipe';
+import { FlipPipe } from './function/flip.pipe';
+import { MemoizePipe } from './function/memoize.pipe';
+import { NegatePipe } from './function/negate.pipe';
+import { OncePipe } from './function/once.pipe';
+import { OverArgsPipe } from './function/over-args.pipe';
+import { PartialPipe } from './function/partial.pipe';
+import { PartialRightPipe } from './function/partial-right.pipe';
+import { ReargPipe } from './function/rearg.pipe';
+import { RestPipe } from './function/rest.pipe';
+import { SpreadPipe } from './function/spread.pipe';
+import { ThrottlePipe } from './function/throttle.pipe';
+import { UnaryPipe } from './function/unary.pipe';
+import { WrapPipe } from './function/wrap.pipe';
+
 const ArrayPipes = [
   ChunkPipe,
   CompactPipe,
@@ -197,9 +225,41 @@ const CollectionPipes = [
   SortByPipe,
 ];
 
+const DatePipes = [
+  NowPipe,
+];
+
+const FunctionPipes = [
+  AfterPipe,
+  AryPipe,
+  BeforePipe,
+  BindPipe,
+  BindKeyPipe,
+  CurryPipe,
+  CurryRightPipe,
+  DebouncePipe,
+  DeferPipe,
+  DelayPipe,
+  FlipPipe,
+  MemoizePipe,
+  NegatePipe,
+  OncePipe,
+  OverArgsPipe,
+  PartialPipe,
+  PartialRightPipe,
+  ReargPipe,
+  RestPipe,
+  SpreadPipe,
+  ThrottlePipe,
+  UnaryPipe,
+  WrapPipe,
+];
+
 const pipes = [
   ArrayPipes,
   CollectionPipes,
+  DatePipes,
+  FunctionPipes,
 ];
 
 @NgModule({

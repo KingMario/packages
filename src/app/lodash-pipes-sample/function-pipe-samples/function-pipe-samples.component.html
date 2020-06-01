@@ -1,0 +1,36 @@
+<!--
+  ~ Copyright (c) 2020. Mario Studio. All right reserved.
+  -->
+
+<h4>Function</h4>
+
+<ul>
+
+  <li>
+    <em>after 2 by _.add and call it with (1, 2) and (3, 4)</em>
+    =>
+    <span *let="(2 | after: add) as myAdd">
+      {{getMyAddResult(myAdd)}}
+    </span>
+    <a href="https://lodash.com/docs#after" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>before (to avoid ExpressionChangedAfterItHasBeenCheckedError) ary _.random by 2 by 2 and call it with (0, 100, true)</em>
+    =>
+    <span *let="(2 | before: random | ary: 2) as myRandom">
+      {{myRandom (0, 100, true)}}
+    </span>
+    <a href="https://lodash.com/docs#ary" target="_docs">reference</a>
+  </li>
+
+  <li>
+    <em>before bind _.random by null and 25 by 2 and call it with (50, true)</em>
+    =>
+    <span *let="(2 | before: random | bind: null: 25) as myRandom">
+      {{myRandom (50, true)}}
+    </span>
+    <a href="https://lodash.com/docs#bind" target="_docs">reference</a>
+  </li>
+
+</ul>

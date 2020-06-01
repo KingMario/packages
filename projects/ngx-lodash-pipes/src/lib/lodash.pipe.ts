@@ -31,6 +31,7 @@ export class LodashPipe implements PipeTransform {
         'pullAt', // this function returns the values pulled,
         'remove', // this function returns the values removed,
         'reverse',
+        'invokeMap',
       ];
       if (arrayMutationMembers.indexOf(lodashMemberName) > -1) {
         // to avoid ExpressionChangedAfterItHasBeenCheckedError

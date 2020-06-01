@@ -4,7 +4,7 @@
     "directive-selector": [
       true,
       "attribute",
-      "lib",
+      "ngx",
       "camelCase"
     ],
     "component-selector": [
