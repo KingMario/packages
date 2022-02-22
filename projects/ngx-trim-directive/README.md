@@ -74,7 +74,8 @@ trimOPtion: '' | 'blur' | false = '';
 
 ## Version History
 
-*1.1.0 Remove Angular 4 support
+* 2.0.0 Ivy Compatibility
+* 1.1.0 Remove Angular 4 support
 * 1.0.11 [#13](https://github.com/KingMario/packages/issues/13) bug fixed, thanks for the contribution from [Timo Peter <img src="https://avatars3.githubusercontent.com/u/16336536?s=46&v=4" height="20" width="20">](https://github.com/tpeter1985)
 * 1.0.10 minor update to keep non-string model untouched
 * 1.0.9 [#8](https://github.com/KingMario/packages/issues/8) trim not-a-function bug in writeValue fixed
