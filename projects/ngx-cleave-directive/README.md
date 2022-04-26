@@ -10,8 +10,7 @@ Since extra `input` and `blur` events are dispatched, if you bind a callback to 
 
 To overcome the disadvantage, a debounced function is recommended for the event binding.
 
-The directive works with Angular 5 and 6. To use it in Angular 4, you may import the .ts file directly (see *Usage*). For Angular 2, you may try it in Angular 4's way, but it's not tested.
-
+The directive works with Angular 5+.
 
 ## Usage
 
@@ -22,21 +21,6 @@ npm i -S cleave.js ngx-cleave-directive
 ```
 
 2.Import `NgxCleaveDirectiveModule` to your Angular module.
-
-**Angular 4**
-
-```typescript
-import { NgxCleaveDirectiveModule } from 'ngx-cleave-directive/src';
-@NgModule({
-  imports: [
-    ...
-    NgxCleaveDirectiveModule,
-    ...
-  ],
-  ...
-```
-
-**Angular 5+**
 
 ```typescript
 import { NgxCleaveDirectiveModule } from 'ngx-cleave-directive';
@@ -67,12 +51,20 @@ import 'cleave.js/dist/addons/cleave-phone.au-cn.js';
 
 5.Cleave.js version compatibility
 
-| Cleave.js | ngx-cleave-directive |
-| --- | --- |
-| 1.3.7 ~ 1.5.0 | 1.0.x |
-| 1.5.1+ | 1.1.x |
+| Cleave.js     | ngx-cleave-directive |
+|---------------|----------------------|
+| 1.3.7 ~ 1.5.0 | 1.0.x                |
+| 1.5.1 ~ 1.5.1 | 1.1.x                |
+| 1.6.0+        | 2.0.x                |
 
 For more details, please refer to [cleave.js official site](https://nosir.github.io/cleave.js/).
+
+
+## Version History
+
+* 2.0.0 Ivy Compatibility
+* 1.1 Cleave 1.5.1+ Compatibility
+* 1.0 Initial Version
 
 ---
 Good luck.

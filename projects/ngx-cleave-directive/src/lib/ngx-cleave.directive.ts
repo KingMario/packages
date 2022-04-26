@@ -19,7 +19,7 @@ import Cleave from 'cleave.js';
 })
 export class NgxCleaveDirective implements OnInit, OnDestroy {
 
-  @Input() set cleave (cleave: any) {
+  @Input('cleave') set cleave (cleave: any) {
 
     this._cleave = cleave;
 
