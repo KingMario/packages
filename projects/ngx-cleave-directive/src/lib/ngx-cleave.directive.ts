@@ -1,129 +1,91 @@
 import {
   Directive,
   ElementRef,
-  HostListener,
   Input,
   OnDestroy,
   OnInit,
   Optional,
 } from '@angular/core';
-import {
-  ControlValueAccessor,
-  NgControl,
-} from '@angular/forms';
+import { NgControl } from '@angular/forms';
 
 import Cleave from 'cleave.js';
+import { CleaveOptions } from 'cleave.js/options';
 
 @Directive({
   selector: 'input[cleave],textarea[cleave]',
 })
 export class NgxCleaveDirective implements OnInit, OnDestroy {
 
-  @Input('cleave') set cleave (cleave: any) {
+  @Input('rawValue') rawValue = false;
 
+  @Input('cleave') set cleave (cleave: CleaveOptions) {
     this._cleave = cleave;
-
     this.setCleave();
-
   }
 
-  private _cleave: any;
-  private _cleaveInstance: Cleave;
-  private _value: string;
-  private _valueAccessor: ControlValueAccessor;
-  private _writeValue: (value) => void;
+  get cleave () {
+    return this._cleave;
+  }
+
+  private _cleave!: CleaveOptions;
+  private cleaveInstance?: Cleave;
+  private viewToModelUpdate = this.ngControl?.viewToModelUpdate;
 
   constructor (
     private elementRef: ElementRef,
     @Optional() private ngControl: NgControl,
   ) {
+    if (!this.ngControl) {
+      throw new Error(
+        'NgxCleaveDirective: should be used with one of the following form directives — ngModel, formControl or formControlName.');
+    }
   }
 
   ngOnInit () {
-
-    if (!this.ngControl) {
-
-      console.warn('Note: The cleave directive should be used with the ngModel, formControl or formControlName directives.');
-
-      return;
-
+    if (this.ngControl) {
+      // the parameter is not used in the patched method,
+      this.ngControl.viewToModelUpdate = (_: any) => {
+        this.viewToModelUpdate?.call(
+          this.ngControl,
+          // update model with the value got from the Cleave instance
+          this.rawValue
+            ? this.cleaveInstance?.getRawValue()
+            : this.cleaveInstance?.getFormattedValue(),
+        );
+      };
     }
-
-    this._valueAccessor = this.ngControl.valueAccessor;
-
-    this._writeValue = this._valueAccessor.writeValue;
-    this._valueAccessor.writeValue = (value) => {
-
-      if (this._writeValue) {
-        this._writeValue.call(this._valueAccessor, value);
-      }
-
-      this.setCleave();
-
-    };
-
   }
 
   ngOnDestroy () {
-
-    if (this._valueAccessor && this._writeValue) {
-
-      this._valueAccessor.writeValue = this._writeValue;
-
+    if (this.ngControl) {
+      this.ngControl.viewToModelUpdate = this.viewToModelUpdate;
     }
 
-    if (this._cleaveInstance) {
-
-      this._cleaveInstance.destroy();
-
-    }
-
-  }
-
-  @HostListener('input', ['$event.target.value'])
-  onInput (value: string): void {
-
-    this._value = value;
+    this.cleaveInstance?.destroy();
 
   }
 
   private setCleave () {
+    this.cleaveInstance?.destroy();
 
-    if (this._cleaveInstance) {
-
-      this._cleaveInstance.destroy();
-
-    }
-
-    const el = this.elementRef.nativeElement;
-    this._cleaveInstance = new Cleave(el, {
-      ...this._cleave,
+    this.cleaveInstance = new Cleave(
+      this.elementRef.nativeElement,
+      {
+      ...this.cleave,
       onValueChanged: ({ target }) => {
-        if (target.value !== this._value) {
+        // trigger the update with an empty string
+        this.ngControl.viewToModelUpdate('');
 
-          this.dispatchEvent(el, 'input');
-
-        }
-
-        if (this._cleave.onValueChanged && typeof this._cleave.onValueChanged === 'function') {
-
-          this._cleave.onValueChanged({ target });
-
+        if (this.cleave.onValueChanged && typeof this.cleave.onValueChanged === 'function') {
+          this.cleave.onValueChanged({ target });
         }
       },
     });
 
-    // hack for model -> view cleave
-    setTimeout(() => this.dispatchEvent(el, 'input'), 0);
-
-  }
-
-  private dispatchEvent (el, eventType) {
-
-    const event = document.createEvent('Event');
-    event.initEvent(eventType, false, false);
-    el.dispatchEvent(event);
-
+    if (!this.rawValue) {
+      // initially format the value, which will trigger onValueChanged to call viewToModelUpdate
+      setTimeout(() => this.cleaveInstance?.setRawValue(this.ngControl.value), 0);
+    }
   }
 
 }
